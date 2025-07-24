@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Navbar } from './components/navbar/Navbar'
+import { Footer } from './components/footer/Footer'
 import viteLogo from '/vite.svg'
 import reactLogo from './assets/react.svg'
 import * as S from './App.styles'
@@ -32,6 +33,7 @@ function App() {
           Click on the Vite and React logos to learn more
         </p>
       </S.Content>
+      <Footer />
     </>
   )
 }
