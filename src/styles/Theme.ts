@@ -102,7 +102,7 @@ export const theme: DefaultTheme = {
     glow: "0 0 20px rgba(168, 85, 247, 0.5)",
     glowLarge: "0 0 40px rgba(168, 85, 247, 0.3)",
     glowIntense: "0 0 60px rgba(168, 85, 247, 0.8)",
-    circle: "box-shadow: 0 0 40px 10px rgba(155, 77, 224, 0.5)"
+    circle: "0 0 40px 10px rgba(155, 77, 224, 0.5)"
   },
 
   transitions: {

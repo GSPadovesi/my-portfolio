@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Navbar } from './components/navbar/Navbar'
 import { Footer } from './components/footer/Footer'
+import { FaWhatsapp } from "react-icons/fa";
 import viteLogo from '/vite.svg'
 import reactLogo from './assets/react.svg'
 import * as S from './App.styles'
@@ -33,6 +34,11 @@ function App() {
           Click on the Vite and React logos to learn more
         </p>
       </S.Content>
+      <div style={{ position: 'fixed', right: '60px', bottom: '120px' }}>
+        <S.WhatsAppCircle>
+          <FaWhatsapp size={32} />
+        </S.WhatsAppCircle>
+      </div>
       <Footer />
     </>
   )

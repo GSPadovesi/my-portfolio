@@ -23,5 +23,6 @@ export const GlobalStyles = createGlobalStyle`
     width: 100dvw;
     overflow-x: hidden; 
     background-color: #11071f;
+    position: relative;
   }
 `
