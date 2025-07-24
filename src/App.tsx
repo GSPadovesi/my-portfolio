@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Button } from './components/Button'
 import { Navbar } from './components/navbar/Navbar'
 import viteLogo from '/vite.svg'
 import reactLogo from './assets/react.svg'
@@ -32,7 +31,6 @@ function App() {
         <p className="read-the-docs">
           Click on the Vite and React logos to learn more
         </p>
-        <Button>Olá</Button>
       </S.Content>
     </>
   )
