@@ -61,6 +61,10 @@ export const NavLinks = styled.nav`
   @media (max-width: 768px) {
     display: none;
   }
+
+  @media(min-width: 1180px){
+    gap: 48px;
+  }
 `;
 
 export const WhatsAppButton = styled.button`
