@@ -21,3 +21,13 @@ export const WhatsAppCircle = styled.div`
     display: none;
   }
 `;
+
+export const ButtonModeTemporary = styled.button`
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 6px;
+  margin-bottom: 12px;
+`
