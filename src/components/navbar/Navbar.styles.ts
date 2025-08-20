@@ -1,13 +1,13 @@
 import styled, { css } from "styled-components"
 
-export const Navbar = styled.header`
+export const Navbar = styled.header<{ $isScrolled?: boolean }>`
   width: 100%;
   height: 100px;
   position: sticky;
   top: 0%;
   color: #fff;
   background-color: ${({ theme }) => theme.colors.navbar};
-  box-shadow: ${({ theme }) => theme.shadows.sm};
+  box-shadow: ${({ $isScrolled,  theme}) => $isScrolled ? theme.shadows.sm : 'none'};
   z-index: ${({ theme }) => theme.zIndex.navbar};
 `
 
@@ -22,7 +22,7 @@ export const Container = styled.div`
   
   .desktoplist{
     display: none;
-    gap: 32px;
+    gap: 64px;
 
     @media(min-width: 770px){
       display: flex;
@@ -45,6 +45,8 @@ export const NavLinks = styled.nav`
   display: flex;
   align-items: center;
   gap: 32px;
+  list-style: none;
+
 
   a {
     color: #fff;
@@ -60,10 +62,6 @@ export const NavLinks = styled.nav`
 
   @media (max-width: 768px) {
     display: none;
-  }
-
-  @media(min-width: 1180px){
-    gap: 48px;
   }
 `;
 
@@ -136,16 +134,42 @@ export const SideMenuLinks = styled.nav`
   flex-direction: column;
   gap: 24px;
   margin-bottom: 40px;
+  list-style: none;
+`;
 
-  a {
-    color: #fff;
-    text-decoration: none;
-    font-family: ${({ theme }) => theme.fontFamily.plusJakarta};
-    font-weight: ${({ theme }) => theme.fontWeight.semibold};
-    font-size: ${({ theme }) => theme.fontSize.xl};
+export const SideMenuItem = styled.li<{ $isActive?: boolean }>`
+  font-size: 18px;
+  font-weight: ${({ $isActive }) => ($isActive ? "700" : "400")};
+  color: #FFFFFF;
+  transition: color 0.3s, font-weight 0.3s;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  padding-bottom: 5px;
+  text-decoration: none;
+  cursor: pointer;
 
-    &:hover{
-      color: ${({ theme }) => theme.colors.primary.hover};
+  &:hover {
+    color: white;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #A254E9;
+    transform: scaleX(${({ $isActive }) => ($isActive ? 1 : 0)});
+    transition: transform 0.3s ease-in-out;
+  }
+
+  @media(max-width: 768px) {
+    font-weight: 500;
+    color: ${({ $isActive }) => ($isActive ? "#A254E9" : "#fff")}; 
+    
+    &::after {
+      display: none;
     }
   }
 `;

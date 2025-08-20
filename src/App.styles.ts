@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Content = styled.section`
+export const Content = styled.main`
   width: 100%;
   min-height: 100dvh;
   position: relative;
