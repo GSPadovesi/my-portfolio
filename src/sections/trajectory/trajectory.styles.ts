@@ -15,7 +15,7 @@ export const TrajectoryContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 46px 16px;
   gap: 36px;
   
@@ -36,7 +36,6 @@ export const TrajectoryTitle = styled.h2`
   &.experience-title{
     font-size: 20px;
     color: #fff;
-    text-align: justify;
   }
 
   @media(min-width: 768px){
@@ -81,4 +80,5 @@ export const TrajectoryExperienceContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 100px;
 `
