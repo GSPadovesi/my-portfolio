@@ -39,6 +39,10 @@ export const Home = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  
+  @media(min-width: 768px){
+    min-height: 70dvh;
+  }
 `
 
 export const HomeContainer = styled.div`
@@ -50,6 +54,10 @@ export const HomeContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 16px;
+
+   @media(min-width: 1440px){
+    max-width: 1850px;
+  }
 `
 
 export const HomeHeader = styled.div`

@@ -5,6 +5,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import { ThemeContext } from './context/ThemeContext';
 import { Welcome } from './sections/welcome/Welcome';
 import * as S from './App.styles'
+import { Information } from './sections/information/Information';
+import { Trajectory } from './sections/trajectory/trajectory';
 
 function App() {
   const { themeName, setThemeName } = useContext(ThemeContext);
@@ -16,7 +18,9 @@ function App() {
       <Navbar />
       <S.Content>
         <Welcome id='inicio-section' />
-        <div id='trajetoria-section' style={{ minHeight: '100dvh' }}>
+        <Information id='information-section' />
+        <Trajectory id='trajetoria-section' />
+        <div style={{ minHeight: '100dvh' }}>
           <h1 style={{ textAlign: 'center', fontSize: '48px', color: '#fff' }}>Continua...</h1>
         </div>
       </S.Content>
