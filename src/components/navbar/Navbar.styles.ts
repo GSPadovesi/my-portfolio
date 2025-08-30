@@ -82,7 +82,7 @@ export const WhatsAppButton = styled.button`
     background-color: #843dbe;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
