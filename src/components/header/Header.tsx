@@ -1,13 +1,13 @@
-import { FiMenu, FiX } from "react-icons/fi";
 import { useEffect, useState, useCallback } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { navItems } from "./Navbar.constants";
+import { navItems } from "./Header.constants";
 import { useScrollSpy } from "../../hooks/useScrollSpy";
-import Balancer from "react-wrap-balancer";
-import * as S from './Navbar.styles'
 import { scrollToSection } from "../../utils/scrollToSection";
+import { HeaderHamburguer } from "./headerHamburguer/HeaderHamburguer";
+import Balancer from "react-wrap-balancer";
+import * as S from './Header.styles'
 
-export const Navbar = () => {
+export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const activeSection = useScrollSpy();
@@ -31,28 +31,25 @@ export const Navbar = () => {
 
 
   return (
-    <S.Navbar $isScrolled={isScrolled}>
+    <S.Header $isScrolled={isScrolled}>
       <S.Container>
         <S.Text><Balancer>Gabriel Santana</Balancer></S.Text>
         <S.MobileMenuIcon onClick={() => setIsOpen(!isOpen)}>
-          <FiMenu size={22} />
+          <HeaderHamburguer isOpen={isOpen} setIsOpen={setIsOpen} />
         </S.MobileMenuIcon>
         <div className='desktoplist'>
           <S.NavLinks>
             {navItems.map((item: any, index: number) => (
-              <S.SideMenuItem key={index} $isActive={item.id === activeSection} onClick={onClick}>{item.label}</S.SideMenuItem>
+              <S.SideMenuItem key={index} $isActive={item.id === activeSection} onClick={() => onClick(item.id)}>{item.label}</S.SideMenuItem>
             ))}
           </S.NavLinks>
           <S.WhatsAppButton>Enviar Whatsapp</S.WhatsAppButton>
         </div>
       </S.Container>
       <S.SideMenu isOpen={isOpen}>
-        <S.CloseIcon onClick={() => setIsOpen(!isOpen)}>
-          <FiX />
-        </S.CloseIcon>
         <S.SideMenuLinks>
           {navItems.map((item: any, index: number) => (
-            <S.SideMenuItem key={index} $isActive={item.id === activeSection} onClick={onClick}>{item.label}</S.SideMenuItem>
+            <S.SideMenuItem key={index} $isActive={item.id === activeSection} onClick={() => onClick(item.id)}>{item.label}</S.SideMenuItem>
           ))}
         </S.SideMenuLinks>
         <S.WhatsAppCircle>
@@ -63,6 +60,6 @@ export const Navbar = () => {
           <span>Chatbot!</span>
         </S.Chatbot>
       </S.SideMenu>
-    </S.Navbar>
+    </S.Header>
   )
 }

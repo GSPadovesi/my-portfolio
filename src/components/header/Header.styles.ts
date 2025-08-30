@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components"
 
-export const Navbar = styled.header<{ $isScrolled?: boolean }>`
+export const Header = styled.header<{ $isScrolled?: boolean }>`
   width: 100%;
   height: 100px;
   position: sticky;
@@ -101,11 +101,11 @@ export const MobileMenuIcon = styled.button`
 
 export const SideMenu = styled.div<{ isOpen: boolean }>`
   position: fixed;
-  top: 0;
+  top: 100px;
   right: 0;
-  width: 320px;
+  width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);  
+  background-color: #000000;  
   display: flex;
   flex-direction: column;
   align-items: center;

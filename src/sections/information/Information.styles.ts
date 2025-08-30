@@ -8,7 +8,7 @@ export const Information = styled.section`
   display: flex;
   flex-direction: column;
 
-  .line{
+  >.line{
     width: 100%; 
     max-width: 1080px; 
     height: 2px; 

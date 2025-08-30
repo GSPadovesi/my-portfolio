@@ -6,6 +6,20 @@ export const Trajectory = styled.section`
   position: relative;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
+
+   >.line-trajectory{
+    width: 100%; 
+    max-width: 1080px; 
+    height: 2px; 
+    margin: 0 auto; 
+    background: linear-gradient(
+    to right,
+    transparent,
+    #a254e9,
+    transparent
+  );
+  }
 `
 
 export const TrajectoryContainer = styled.div`
@@ -36,6 +50,7 @@ export const TrajectoryTitle = styled.h2`
   &.experience-title{
     font-size: 20px;
     color: #fff;
+    text-align: left;
   }
 
   @media(min-width: 768px){
@@ -69,8 +84,16 @@ export const TrajectoryParagraph = styled.p`
   text-transform: none;   
   color: #fff;
 
+  &.paragraph-experience{
+    font-size: 20px;
+  }
+
   @media(min-width: 768px){
     font-size: 26px;
+
+    &.paragraph-experience{
+      font-size: 32px;
+    }
   }
 `
 
@@ -79,6 +102,22 @@ export const TrajectoryExperienceContainer = styled.div`
   max-width: 1080px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   margin-top: 100px;
+`
+
+export const TrajectoryExperienceGrid = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 20px;
+  
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(1, minmax(240px, 1fr));
+  }
+
+
+  >h1{
+    color: #fff;
+  }
 `

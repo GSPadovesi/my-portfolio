@@ -9,7 +9,7 @@ export const Information = (props: any) => {
         <S.InformationContainer>
           <h1>Olá, mundo</h1>
         </S.InformationContainer>
-        <span className='line' style={{}} />
+        <span className='line' />
       </S.Information>
     </>
   )

@@ -1,5 +1,7 @@
+import { experienceInfo } from './Trajectory.constant'
+import { ExperienceCard } from '../../components/experiencecard/ExperienceCard';
 import Balancer from 'react-wrap-balancer';
-import * as S from './trajectory.styles'
+import * as S from './Trajectory.styles';
 
 export const Trajectory = (props: any) => {
   const { id } = props;
@@ -14,10 +16,17 @@ export const Trajectory = (props: any) => {
           <S.TrajectoryParagraph><Balancer>Tenho domínio de tecnologias como HTML, CSS, JavaScript, React, Node.js e Next.js, além de conhecimentos em Java adquiridos durante a faculdade. Atuo principalmente no frontend, mas também desenvolvo funcionalidades no backend, contribuindo em todas as etapas dos projetos.</Balancer></S.TrajectoryParagraph>
           <S.TrajectoryParagraph><Balancer>Sou um profissional comprometido, curioso e focado em aprendizado contínuo. Valorizo o trabalho em equipe, gosto de enfrentar desafios técnicos e busco sempre entregar soluções úteis, bem estruturadas e alinhadas às necessidades do usuário e da empresa.</Balancer></S.TrajectoryParagraph>
         </S.TrajectoryInformationContainer>
-        <S.TrajectoryExperienceContainer>
+        <S.TrajectoryExperienceContainer id='experiencias-section'>
           <S.TrajectoryTitle className='experience-title'><Balancer>Experiências de trabalho</Balancer></S.TrajectoryTitle>
+          <S.TrajectoryExperienceGrid>
+            {experienceInfo.map((item) => (
+              <ExperienceCard key={item.id} {...item} />
+            ))}
+          </S.TrajectoryExperienceGrid>
+          <S.TrajectoryParagraph className='paragraph-experience'><Balancer>Atualmente possuo conhecimento avançado nas seguintes <span style={{ color: '#A254E9' }}>ferramentas</span></Balancer></S.TrajectoryParagraph>
         </S.TrajectoryExperienceContainer>
       </S.TrajectoryContainer>
+      <span className='line-trajectory' />
     </S.Trajectory>
   )
 }
