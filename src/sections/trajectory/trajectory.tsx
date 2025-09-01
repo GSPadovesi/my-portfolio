@@ -23,7 +23,8 @@ export const Trajectory = (props: any) => {
               <ExperienceCard key={item.id} {...item} />
             ))}
           </S.TrajectoryExperienceGrid>
-          <S.TrajectoryParagraph className='paragraph-experience'><Balancer>Atualmente possuo conhecimento avançado nas seguintes <span style={{ color: '#A254E9' }}>ferramentas</span></Balancer></S.TrajectoryParagraph>
+          <S.TrajectoryParagraph className='paragraph-experience'><Balancer>Atualmente possuo conhecimento avançado nas seguintes <span style={{ color: '#A254E9', borderBottom: '2px solid #7127BA' }}>ferramentas</span></Balancer></S.TrajectoryParagraph>
+          <S.TrajectoryExperienceCover src='/skills.png' alt='skills' />
         </S.TrajectoryExperienceContainer>
       </S.TrajectoryContainer>
       <span className='line-trajectory' />

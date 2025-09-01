@@ -34,9 +34,9 @@ export const TrajectoryContainer = styled.div`
   gap: 36px;
   
 
-  @media(min-width: 1440px){
+  /* @media(min-width: 1440px){
     max-width: 1850px;
-  }
+  } */
 `
 
 export const TrajectoryTitle = styled.h2`
@@ -103,7 +103,10 @@ export const TrajectoryExperienceContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-top: 100px;
+
+  @media(min-width: 1024px){
+    margin-top: 100px;
+  }
 `
 
 export const TrajectoryExperienceGrid = styled.div`
@@ -112,7 +115,7 @@ export const TrajectoryExperienceGrid = styled.div`
   grid-template-columns: repeat(2, minmax(240px, 1fr));
   gap: 20px;
   
-  @media screen and (max-width: 1024px) {
+  @media(max-width: 1024px) {
     grid-template-columns: repeat(1, minmax(240px, 1fr));
   }
 
@@ -120,4 +123,9 @@ export const TrajectoryExperienceGrid = styled.div`
   >h1{
     color: #fff;
   }
+`
+
+export const TrajectoryExperienceCover = styled.img`
+  width: 100%;
+  object-fit: cover;
 `

@@ -55,9 +55,9 @@ export const HomeContainer = styled.div`
   justify-content: center;
   padding: 16px;
 
-   @media(min-width: 1440px){
+   /* @media(min-width: 1440px){
     max-width: 1850px;
-  }
+  } */
 `
 
 export const HomeHeader = styled.div`

@@ -33,7 +33,7 @@ export const InformationContainer = styled.div`
   padding: 16px;
   flex: 1;
 
-   @media(min-width: 1440px){
+   /* @media(min-width: 1440px){
     max-width: 1850px;
-  }
+  } */
 `
