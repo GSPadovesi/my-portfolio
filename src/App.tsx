@@ -7,6 +7,7 @@ import { Welcome } from './sections/welcome/Welcome';
 import { Information } from './sections/information/Information';
 import { Trajectory } from './sections/trajectory/Trajectory';
 import * as S from './App.styles'
+import { Project } from './sections/projects/Projects';
 
 function App() {
   const { themeName, setThemeName } = useContext(ThemeContext);
@@ -18,8 +19,8 @@ function App() {
         <Welcome id='inicio-section' />
         <Information id='information-section' />
         <Trajectory id='trajetoria-section' />
+        <Project id='projetos-section' />
         <div style={{ minHeight: '100dvh' }}>
-          <h1 style={{ textAlign: 'center', fontSize: '48px', color: '#fff' }}>Continua...</h1>
         </div>
       </S.Content>
       <div style={{ position: 'fixed', right: '60px', bottom: '120px' }}>

@@ -47,17 +47,13 @@ export const Home = styled.section`
 
 export const HomeContainer = styled.div`
   width: 100%;
-  max-width: 1250px;
+  max-width: 1450px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 16px;
-
-   /* @media(min-width: 1440px){
-    max-width: 1850px;
-  } */
 `
 
 export const HomeHeader = styled.div`
@@ -72,7 +68,8 @@ export const HomeHeader = styled.div`
    gap: 40px;  
   }
 
-  @media(min-width: 1440px){
+  @media(min-width: 1024px){
+    gap: 80px;
   }
 `
 
