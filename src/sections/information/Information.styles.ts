@@ -121,6 +121,24 @@ export const InformationButton = styled.button`
     height: 18px;
   }
 
+  &.primary{
+    background-color: #A254E9;
+    
+    &:hover{
+      background-color: transparent;
+      border: 1px solid #A254E9;
+    }
+  }
+
+   &.secondary{
+    background-color: transparent; 
+    border: 1px solid #A254E9;
+
+    &:hover{
+      background-color: #7c3aed;
+    }
+  }
+
 `
 
 export const Icon = styled.img`

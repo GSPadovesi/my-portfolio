@@ -1,5 +1,7 @@
-import Balancer from 'react-wrap-balancer';
 import { Typewriter } from '../../components/typewriter/Typewriter';
+import { useCallback } from 'react';
+import { redirectToLink } from '../../utils/redirectToLink';
+import Balancer from 'react-wrap-balancer';
 import * as S from './Information.styles'
 
 export const Information = (props: any) => {
@@ -21,8 +23,8 @@ export const Information = (props: any) => {
               </Balancer>
             </S.InformationParagraph>
             <S.InformationWrapperButtons>
-              <S.InformationButton style={{ backgroundColor: '#A254E9' }}>Enviar Whatsapp</S.InformationButton>
-              <S.InformationButton style={{ backgroundColor: 'transparent', border: '1px solid #A254E9' }}><img src='/linkedinbutton.svg' alt='icone linkedin' /> Visitar meu linkedin</S.InformationButton>
+              <S.InformationButton className='primary' onClick={() => redirectToLink('https://wa.me/11947063723?&text=Ola, tudo bem?')}>Enviar Whatsapp</S.InformationButton>
+              <S.InformationButton className='secondary' style={{}} onClick={() => redirectToLink('https://www.linkedin.com/in/gabriel-santana-padovesi-59b1041b7/')}><img src='/linkedinbutton.svg' alt='icone linkedin' /> Visitar meu linkedin</S.InformationButton>
             </S.InformationWrapperButtons>
           </S.InformationContent>
           <div>

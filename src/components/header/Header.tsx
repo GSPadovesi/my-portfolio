@@ -4,6 +4,7 @@ import { navItems } from "./Header.constants";
 import { useScrollSpy } from "../../hooks/useScrollSpy";
 import { scrollToSection } from "../../utils/scrollToSection";
 import { HeaderHamburguer } from "./headerHamburguer/HeaderHamburguer";
+import { redirectToLink } from "../../utils/redirectToLink";
 import Balancer from "react-wrap-balancer";
 import * as S from './Header.styles'
 
@@ -43,7 +44,7 @@ export const Header = () => {
               <S.SideMenuItem key={index} $isActive={item.id === activeSection} onClick={() => onClick(item.id)}>{item.label}</S.SideMenuItem>
             ))}
           </S.NavLinks>
-          <S.WhatsAppButton>Enviar Whatsapp</S.WhatsAppButton>
+          <S.WhatsAppButton onClick={() => redirectToLink('https://wa.me/11947063723?&text=Ola, tudo bem?')}>Enviar Whatsapp</S.WhatsAppButton>
         </div>
       </S.Container>
       <S.SideMenu isOpen={isOpen}>
@@ -52,7 +53,7 @@ export const Header = () => {
             <S.SideMenuItem key={index} $isActive={item.id === activeSection} onClick={() => onClick(item.id)}>{item.label}</S.SideMenuItem>
           ))}
         </S.SideMenuLinks>
-        <S.WhatsAppCircle>
+        <S.WhatsAppCircle onClick={() => redirectToLink('https://wa.me/11947063723?&text=Ola, tudo bem?')}>
           <FaWhatsapp size={32} />
         </S.WhatsAppCircle>
         <S.Chatbot>
