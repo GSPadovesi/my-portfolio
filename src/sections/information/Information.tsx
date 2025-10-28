@@ -4,12 +4,11 @@ import { redirectToLink } from '../../utils/redirectToLink';
 import Balancer from 'react-wrap-balancer';
 import * as S from './Information.styles'
 
-export const Information = (props: any) => {
-  const { id } = props;
+export const Information = () => {
 
   return (
     <>
-      <S.Information id={id}>
+      <S.Information>
         <S.InformationContainer>
           <S.InformationContent>
             {/* <S.Icon src='/icon.svg' alt='icon' /> */}
@@ -18,9 +17,7 @@ export const Information = (props: any) => {
               <S.InformationSpan>Atualmente trabalhando na empresa <a href='https://www.gastech.com.br/' target='_blank'>GAS TECH</a></S.InformationSpan>
             </div>
             <S.InformationParagraph>
-              <Balancer>
-                Desenvolvedor de software, atuando na área há mais 2 anos. Crio sites e sistemas funcionais que equilibram a experiência do usuário com os objetivos do negócio, unindo estética, desempenho e propósito.
-              </Balancer>
+              <Balancer>Desenvolvedor de software, atuando na área há mais 2 anos. Crio sites e sistemas funcionais que equilibram a experiência do usuário com os objetivos do negócio, unindo estética, desempenho e propósito.</Balancer>
             </S.InformationParagraph>
             <S.InformationWrapperButtons>
               <S.InformationButton className='primary' onClick={() => redirectToLink('https://wa.me/11947063723?&text=Ola, tudo bem?')}>Enviar Whatsapp</S.InformationButton>

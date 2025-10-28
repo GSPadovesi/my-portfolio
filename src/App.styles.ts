@@ -1,11 +1,5 @@
 import styled from "styled-components"
 
-export const Content = styled.main`
-  width: 100%;
-  min-height: 100dvh;
-  position: relative;
-`
-
 export const WhatsAppCircle = styled.div`
   background-color: #25d366;
   color: #fff;
