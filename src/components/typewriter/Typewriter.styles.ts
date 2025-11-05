@@ -4,11 +4,8 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
-  @media(min-width: 768px){
-    justify-content: flex-start;
-  }
 `
 
 export const Writing = styled.h2`

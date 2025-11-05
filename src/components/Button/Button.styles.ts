@@ -49,5 +49,9 @@ export const StyledButton = styled.button<{
 
     ${$variant === 'primary' && StyledButtonPrimaty}
     ${$variant === 'secondary' && StyledButtonSecondary}
+
+    @media(max-width: 768px){
+      width: 100%;
+    }
   `}
 `

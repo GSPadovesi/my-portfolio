@@ -12,7 +12,7 @@ export const Header = styled.header<{ $isScrolled?: boolean }>`
 `
 
 export const Container = styled.div`
-  max-width: 1250px;
+  max-width: 1080px;
   height: 100%;
   margin: 0 auto;
   display: flex;

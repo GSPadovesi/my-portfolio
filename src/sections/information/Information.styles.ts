@@ -181,5 +181,4 @@ export const InfomartionDataContent = styled.div`
       border-bottom: none;
     }
   }
-
 `

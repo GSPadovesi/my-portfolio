@@ -16,5 +16,9 @@ export const StyledParagraph = styled.p<{
     line-height: ${$lineHeight || '1.2'};
     font-style: ${$fontStyle || 'normal'};
     font-family: 'Inter', sans-serif;
+
+    @media(max-width: 768px){
+      font-size: ${`calc(${$fontSize} - 4px)`}
+    }
   `}
 `

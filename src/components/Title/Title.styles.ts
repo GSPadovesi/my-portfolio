@@ -20,10 +20,14 @@ export const StyledTitle = styled(
   $variant?: keyof typeof variantFontSize;
 }>`
   ${({ theme, $fontWeight, $textAlign, $fontColor, $variant }) => css`
-    font-size: ${variantFontSize[$variant || 'h1'][0]};
-    line-height: ${variantFontSize[$variant || 'h1'][1]};
+    font-size: ${variantFontSize[$variant || 'h1'][1]};
+    line-height: 1.4;
     font-weight: ${$fontWeight || 600};
     text-align: ${$textAlign || 'left'};
     color: ${$fontColor || theme?.colors?.text || '#000'};
+
+    @media(max-width: 768px){
+      font-size: ${variantFontSize[$variant || 'h1'][0]};
+    }
   `}
 `;
