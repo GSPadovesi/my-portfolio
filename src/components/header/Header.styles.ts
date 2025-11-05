@@ -7,18 +7,18 @@ export const Header = styled.header<{ $isScrolled?: boolean }>`
   top: 0%;
   color: #fff;
   background-color: ${({ theme }) => theme.colors.navbar};
-  box-shadow: ${({ $isScrolled,  theme}) => $isScrolled ? theme.shadows.sm : 'none'};
-  z-index: ${({ theme }) => theme.zIndex.navbar};
+  box-shadow: ${({ $isScrolled}) => $isScrolled ? "0 1px 2px 0 rgba(0, 0, 0, 0.5)" : 'none'};
+  z-index: 1000;
 `
 
 export const Container = styled.div`
-  max-width: 1200px;
+  max-width: 1250px;
   height: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 ${({ theme }) => theme.spacing.lg};
+  padding: 0 16px;
   
   .desktoplist{
     display: none;
@@ -32,12 +32,12 @@ export const Container = styled.div`
 
 export const Text = styled.h1`
   color: ${({ theme }) => theme.colors.text.primary};
-  font-weight: ${({ theme }) => theme.fontWeight.extrabold};
-  font-family: ${({ theme }) => theme.fontFamily.roboto};
-  font-size: ${({ theme }) => theme.fontSize.xxl};
+  font-weight: 800;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
 
   @media(min-width: 768px){
-    font-size: ${({ theme }) => theme.fontSize.xxxl};
+    font-size: 32px;
   }
 `
 
@@ -51,9 +51,9 @@ export const NavLinks = styled.nav`
   a {
     color: #fff;
     text-decoration: none;
-    font-family: ${({ theme }) => theme.fontFamily.plusJakarta};
-    font-weight: ${({ theme }) => theme.fontWeight.semibold};
-    font-size: ${({ theme }) => theme.fontSize.xl};
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
 
     &:hover{
       color: ${({ theme }) => theme.colors.primary.hover};
@@ -73,10 +73,10 @@ export const WhatsAppButton = styled.button`
   padding: 8px 16px;
   color: #fff;
   cursor: pointer;
-  font-family: ${({ theme }) => theme.fontFamily.poppins};
-  border-radius: ${({ theme }) => theme.borderRadius.lg};
-  font-size: ${({ theme }) => theme.fontSize.base};
-  font-weight: ${({ theme }) => theme.fontWeight.medium};
+  font-family: 'Poppins', sans-serif;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
 
   &:hover {
     background-color: #843dbe;
@@ -110,7 +110,7 @@ export const SideMenu = styled.div<{ isOpen: boolean }>`
   flex-direction: column;
   align-items: center;
   padding-top: 60px; 
-  z-index: ${({ theme }) => theme.zIndex.overlay};
+  z-index: 1300;
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
   transform: translateX(${({ isOpen }) => (isOpen ? "0" : "20px")});
@@ -182,7 +182,7 @@ export const WhatsAppCircle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: ${({ theme }) => theme.shadows.circle};
+  box-shadow: 0 0 40px 10px rgba(155, 77, 224, 0.5);
 `;
 
 export const Chatbot = styled.div`
@@ -190,7 +190,7 @@ export const Chatbot = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: ${({ theme }) => theme.shadows.circle};
+  box-shadow: 0 0 40px 10px rgba(155, 77, 224, 0.5);
   background-color: #fff;
   border-radius: 50%;
 

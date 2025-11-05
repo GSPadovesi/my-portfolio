@@ -1,4 +1,4 @@
-import { Typewriter } from '../../components/typewriter/Typewriter';
+import { Typewriter } from '../../components/Tpewriter/Typewriter';
 import { useCallback } from 'react';
 import { redirectToLink } from '../../utils/redirectToLink';
 import Balancer from 'react-wrap-balancer';

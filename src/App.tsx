@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
-import { Header } from './components/header/Header'
-import { Footer } from './components/footer/Footer'
+import { Header } from './components/Header/Header'
+import { Footer } from './components/Footer/Footer'
 import { FaWhatsapp } from "react-icons/fa";
 import { ThemeContext } from './context/ThemeContext';
 import { Welcome } from './sections/welcome/Welcome';

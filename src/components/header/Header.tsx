@@ -3,7 +3,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { navItems } from "./Header.constants";
 import { useScrollSpy } from "../../hooks/useScrollSpy";
 import { scrollToSection } from "../../utils/scrollToSection";
-import { HeaderHamburguer } from "./headerHamburguer/HeaderHamburguer";
+import { HeaderHamburguer } from "./HeaderHamburguer/HeaderHamburguer";
 import { redirectToLink } from "../../utils/redirectToLink";
 import Balancer from "react-wrap-balancer";
 import * as S from './Header.styles'
