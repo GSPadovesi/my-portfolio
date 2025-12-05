@@ -24,7 +24,7 @@ export const Welcome = (props: any) => {
         <S.WelcomeInformationContainer>
           <S.WelcomeInformationContent>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <Typewriter label='Sou desenvolvedor de software.' />
+              <Typewriter label='Desenvolvedor de software.' />
               <S.WelcomeInformationSpan>Atualmente trabalhando na empresa <a href='https://www.gastech.com.br/' target='_blank'>GAS TECH</a></S.WelcomeInformationSpan>
             </div>
             <Paragraph $fontSize='20px' $lineHeight='1.4'>Desenvolvedor de software, atuando na área há 2 anos. Crio sites e sistemas funcionais que equilibram a experiência do usuário com os objetivos do negócio, unindo estética, desempenho e propósito.</Paragraph>
