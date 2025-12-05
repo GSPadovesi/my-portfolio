@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 `
 
 export const Writing = styled.h2`
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   color: #fff;
   font-size: 20px;

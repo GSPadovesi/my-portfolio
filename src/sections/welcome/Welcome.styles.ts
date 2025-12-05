@@ -2,32 +2,41 @@ import styled, { keyframes } from 'styled-components'
 
 export const Welcome = styled.section`
   width: 100%;
-  min-height: calc(100dvh - 100px);
-  /* display: flex;
-  flex-direction: column; */
   overflow: hidden;
+
+  .line{
+    display: block;
+    width: 100%; 
+    max-width: 1080px; 
+    height: 2px; 
+    margin: 0 auto; 
+    margin-top: 40px;
+    background: linear-gradient(
+    to right,
+    transparent,
+    #a254e9,
+    transparent
+  );
+}
 `;
 
 export const WelcomePresentation = styled.div`
   width: 100%;
-  height: 80dvh;
   background-image: url('/home.png');
   background-repeat: no-repeat;
   background-size: cover;
+  -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
 
-  @media(max-width: 768px){
-    height: 25dvh;
-  }
-
-  @media(max-width: 1024px){
-    height: 50dvh;
+  @media(min-width: 1180px){
+    height: 80dvh;
   }
 `;
 
 export const WelcomePresentationContainer = styled.div`
   width: 100%;
   height: 100%;
-  max-width: 1250px;
+  max-width: 1080px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -50,7 +59,7 @@ export const Cover = styled.img`
   border-radius: 50%;
   border: 6px solid #7127BA;
   object-fit: cover;
-  box-shadow: 0 0 40px 20px rgba(155, 77, 224, 0.5);
+  box-shadow: 0 0 20px 20px rgba(155, 77, 224, 0.5);
 
   @media(min-width: 540px){
     width: 200px;
@@ -97,11 +106,17 @@ export const WelcomePresentationTitle = styled.h1`
 
 export const WelcomeInformation = styled.div`
   width: 100%;
+  height: 100%;
+
+  @media(min-width: 1180px){
+    /* transform: translateY(-120px); */
+    margin-top: -120px;
+  }
 `
 
 export const WelcomeInformationContainer = styled.div`
   width: 100%;
-  max-width: 1250px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 16px;
   display: flex;
@@ -123,6 +138,7 @@ export const WelcomeInformationContent = styled.div`
 
   @media(min-width: 1024px){
     flex: 1;
+    gap: 26px;
   }
 `
 
@@ -132,34 +148,13 @@ export const WelcomeInformationSpan = styled.span`
   font-size: 20px;
   color: #fff;
 
-
   >a{
     color: #7127BA;
     border-bottom: 2px solid #7127BA;
     cursor: pointer;
   }
 
-  @media(max-width: 766px){
-    text-align: center;
-  }
 `
-
-// export const WelcomeInformationParagraph = styled.p`
-//   width: 100%;
-//   font-family: "Roboto", sans-serif;
-//   font-weight: 400;
-//   font-size: 16px;
-//   text-align: center;
-//   line-height: 1.6;
-//   hyphens: none;
-//   text-transform: none;   
-//   color: #fff;
-
-//   @media(min-width: 768px){
-//     font-size: 22px;
-//     text-align: justify;
-//   }
-// `
 
 export const WelcomeInformationWrapperButtons = styled.div`
   width: 100%;
@@ -169,8 +164,9 @@ export const WelcomeInformationWrapperButtons = styled.div`
   align-items: center;
   gap: 12px;
 
-  @media(min-width: 768px){
+  @media(min-width: 1024px){
     flex-direction: row;
     justify-content: flex-start;
   }
 `
+

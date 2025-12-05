@@ -25,6 +25,8 @@ export const StyledTitle = styled(
     font-weight: ${$fontWeight || 600};
     text-align: ${$textAlign || 'left'};
     color: ${$fontColor || theme?.colors?.text || '#000'};
+    font-family: 'Inter', sans-serif;
+    width: 100%;
 
     @media(max-width: 768px){
       font-size: ${variantFontSize[$variant || 'h1'][0]};

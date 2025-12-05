@@ -1,5 +1,6 @@
 import { TitleProps } from './Title.types'
 import React from 'react'
+import Balancer from 'react-wrap-balancer'
 import * as S from './Title.styles'
 
 export const Title: React.FC<TitleProps> = ({ children, $variant = 'h1', $fontWeight, $textAlign, $fontColor, ...props }) => {
@@ -11,6 +12,6 @@ export const Title: React.FC<TitleProps> = ({ children, $variant = 'h1', $fontWe
     $fontColor={$fontColor}
     {...props}
   >
-    {children}
+    <Balancer>{children}</Balancer>
   </S.StyledTitle>
 } 

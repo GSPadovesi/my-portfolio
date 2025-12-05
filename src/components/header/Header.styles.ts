@@ -33,7 +33,7 @@ export const Container = styled.div`
 export const Text = styled.h1`
   color: ${({ theme }) => theme.colors.text.primary};
   font-weight: 800;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
 
   @media(min-width: 768px){
