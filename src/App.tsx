@@ -3,6 +3,7 @@ import { Footer } from './components/Footer/Footer'
 import { Welcome } from './sections/welcome/Welcome';
 import { Trajectory } from './sections/trajectory/Trajectory';
 import { Project } from './sections/projects/Projects';
+import { Contact } from './sections/contact/contact';
 import * as S from './App.styles'
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <Welcome id='inicio-section' />
       <Trajectory id='trajetoria-section' />
       <Project id='projetos-section' />
-      <div style={{ width: '100%', height: '100dvh' }}></div>
+      <Contact id='contato-section' />
       <Footer />
       {/* 
         
