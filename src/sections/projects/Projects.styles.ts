@@ -33,6 +33,10 @@ export const ProjectsContainer = styled.div`
   justify-content: flex-start;
   padding: 46px 16px;
   gap: 36px;
+
+  @media(min-width: 1024px){
+    gap: 64px;
+  }
 `
 
 export const ProjectTitle = styled.h2`
