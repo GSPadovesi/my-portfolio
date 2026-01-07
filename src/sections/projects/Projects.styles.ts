@@ -3,24 +3,22 @@ import styled from 'styled-components'
 
 export const Projects = styled.section`
   width: 100%;
-  min-height: 100dvh;
-  position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-
-   >.line-trajectory{
+  .line{
+    display: block;
     width: 100%; 
     max-width: 1080px; 
     height: 2px; 
     margin: 0 auto; 
+    margin-top: 40px;
     background: linear-gradient(
-    to right,
-    transparent,
-    #a254e9,
-    transparent
-  );
+      to right,
+      transparent,
+      #a254e9,
+      transparent
+    );
   }
+
 `
 
 export const ProjectsContainer = styled.div`
@@ -35,7 +33,7 @@ export const ProjectsContainer = styled.div`
   gap: 36px;
 
   @media(min-width: 1024px){
-    gap: 64px;
+    gap: 80px;
   }
 `
 

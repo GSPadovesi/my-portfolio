@@ -1,38 +1,33 @@
 import styled from 'styled-components';
 
-export const ProjectCard = styled.div`
+export const ProjectCard = styled.div<{ isOdd: boolean }>`
   width: 100%;
   height: 100%;
-  max-height: 360px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 
   @media(min-width: 1024px){
-    flex-direction: row;
+    flex-direction: ${props => props.isOdd ? 'row' : 'row-reverse'};
     gap: 0;
+    max-height: 380px;
   }
 `;
 
-export const ProjectCardInformationContainer = styled.div`
+export const ProjectCardInformationContainer = styled.div<{ isOdd: boolean }>`
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: ${props => props.isOdd ? 'flex-start' : 'flex-end'};
   gap: 16px;
   position: relative;
 `
 
-export const InformationDescriptionContainer = styled.div`
+export const InformationDescriptionContainer = styled.div<{ isOdd: boolean }>`
   width: 100%;
   border-radius: 8px;
   padding: 10px 16px 10px 10px;
-  background: linear-gradient(
-    to right,
-  
-    #18132e,
-    rgba(70, 144, 212, 0)
-
-  );
+  background: ${props => props.isOdd && 'linear-gradient(to left, #18132e, rgba(70, 144, 212, 0))'};
   backdrop-filter: blur(50px);
   z-index: 10;
 
@@ -43,7 +38,7 @@ export const InformationDescriptionContainer = styled.div`
 
 export const ProjectCardImageContainer = styled.div`
   width: 100%;
-  box-shadow: -42px -42px 60px 10px rgba(180, 100, 230, 0.35);
+  box-shadow: -42px -42px 60px 10px rgba(180, 100, 230, 0.10);
   position: relative;
 
   >span{
@@ -63,4 +58,12 @@ export const ProjectCardCover = styled.img`
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+`
+
+export const ButtonsWrapper = styled.div<{ isOdd: boolean }>`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: ${props => props.isOdd ? 'flex-start' : 'flex-end'};
+  gap: 16px;
 `

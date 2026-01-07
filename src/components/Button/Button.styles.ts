@@ -4,8 +4,8 @@ const StyledButtonPrimaty = css`
   background-color: ${(props) => props.theme.colors.primary.base};
 
   &:hover{
-    background-color: transparent;
-    border: 1px solid ${(props) => props.theme.colors.primary.hover};
+    /* background-color: transparent; */
+    /* border: 1px solid ${(props) => props.theme.colors.primary.hover}; */
   }
 `
 
@@ -14,7 +14,7 @@ const StyledButtonSecondary = css`
   border: 1px solid ${(props) => props.theme.colors.primary.base};
 
   &:hover{
-    background-color: ${(props) => props.theme.colors.primary.hover};
+    /* background-color: ${(props) => props.theme.colors.primary.hover}; */
   }
 `
 
