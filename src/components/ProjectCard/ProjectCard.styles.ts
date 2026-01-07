@@ -27,7 +27,7 @@ export const InformationDescriptionContainer = styled.div<{ isOdd: boolean }>`
   width: 100%;
   border-radius: 8px;
   padding: 10px 16px 10px 10px;
-  background: ${props => props.isOdd && 'linear-gradient(to left, #18132e, rgba(70, 144, 212, 0))'};
+  background: ${props => props.isOdd ? 'linear-gradient(to right, #18132e, rgba(70, 144, 212, 0))' : 'linear-gradient(to left, #18132e, rgba(70, 144, 212, 0))'};
   backdrop-filter: blur(50px);
   z-index: 10;
 
