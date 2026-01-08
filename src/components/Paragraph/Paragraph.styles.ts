@@ -18,7 +18,7 @@ export const StyledParagraph = styled.p<{
     font-family: 'Inter', sans-serif;
 
     @media(max-width: 768px){
-      font-size: ${`calc(${$fontSize} - 4px)`}
+      font-size: ${`calc(${$fontSize || '16px'} - 4px)`}
     }
   `}
 `

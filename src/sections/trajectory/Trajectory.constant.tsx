@@ -1,6 +1,3 @@
-
-
-
 export interface experienceinfoprops {
   id: number;
   label: string;
@@ -14,7 +11,6 @@ export const experienceInfo: experienceinfoprops[] = [
   { id: 4, label: 'Aplicativos Mobile', icon: '/IconAppMobiles.svg' },
 ]
 
-
 export const skillsInfo = [
   { id: 1, label: 'HTML5', icon: '/html.png', color: '#E34F26' },
   { id: 2, label: 'CSS3', icon: '/css.png', color: '#264DE4' },
@@ -24,7 +20,8 @@ export const skillsInfo = [
   { id: 6, label: 'Next.js', icon: '/nextjs.png', color: '#000000' },
   { id: 7, label: 'Node.js', icon: '/nodejs.png', color: '#339933' },
   { id: 8, label: 'Git', icon: '/git.png', color: '#F05032' },
-  { id: 9, label: 'Java', icon: '/github.png', color: '#181717' },
-  { id: 10, label: 'MongoDB', icon: '/github.png', color: '#181717' },
-  { id: 11, label: 'Firebase', icon: '/github.png', color: '#181717' }
-]
+  { id: 9, label: 'GitHub', icon: '/github.png', color: '#181717' },
+  { id: 10, label: 'Java', icon: '/java.png', color: '#007396' },
+  { id: 11, label: 'MongoDB', icon: '/mongodb.png', color: '#47A248' },
+  { id: 12, label: 'Firebase', icon: '/firebase.png', color: '#FFCA28' }
+] 

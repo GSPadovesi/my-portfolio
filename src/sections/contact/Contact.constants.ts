@@ -10,7 +10,8 @@ export const SocialNetworksData = [
   {
     id: 2,
     name: 'GitHub',
-    url: 'https://github.com/GSPadovesi'
+    url: 'https://github.com/GSPadovesi',
+    icon: '/github.svg'
   },
   {
     id: 3,

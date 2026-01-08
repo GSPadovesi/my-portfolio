@@ -49,7 +49,7 @@ export const Header = () => {
             ))}
           </S.NavLinks>}
           <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-            {isProjectPage && <Button $variant="primary" onClick={onBack}>Voltar para home</Button>}
+            {isProjectPage && <Button $variant="primary" onClick={onBack}>Voltar para a pagina principal</Button>}
             <S.WhatsAppButton onClick={() => redirectToLink('https://wa.me/11947063723?&text=Ola, tudo bem?')}>Enviar Whatsapp</S.WhatsAppButton>
           </div>
         </div>

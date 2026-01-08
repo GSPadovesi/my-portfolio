@@ -58,6 +58,7 @@ export const Trajectory = (props: any) => {
           <S.SkillsWrapper>
             {skillsInfo.map((skill) => <Skills key={skill.id} {...skill} />)}
           </S.SkillsWrapper>
+          <S.TrajectoryExperienceCover src='/skills.svg' alt='skills' />
         </S.TrajectoryExperienceContainer>
       </S.TrajectoryContainer>
       <span className='line' />
