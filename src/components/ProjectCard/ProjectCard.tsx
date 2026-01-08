@@ -4,11 +4,17 @@ import { Paragraph } from '../Paragraph/Paragraph';
 import { Title } from '../Title/Title'
 import { redirectToLink } from '../../utils/redirectToLink';
 import * as S from './ProjectCard.styles'
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Modal } from '../Modal/Modal';
+import { useNavigate } from 'react-router-dom';
 
 export const ProjectCard = (props: any) => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const onNavigate = useCallback((projectName: string) => {
+    navigate(`/project/${projectName.split(' ').join('-')}`);
+  }, [navigate]);
 
   return (
     <S.ProjectCard isOdd={props.isOld}>
@@ -22,7 +28,7 @@ export const ProjectCard = (props: any) => {
         </S.InformationDescriptionContainer>
         <S.ButtonsWrapper isOdd={props.isOld}>
           <Button $variant="primary" $size="large" onClick={() => redirectToLink(`${props.link}`)}>Ir ao site oficial</Button>
-          <Button $variant="secondary" $size="large" onClick={() => { }}>Ver mais sobre</Button>
+          <Button $variant="secondary" $size="large" onClick={() => onNavigate(props.title)}>Ver mais sobre</Button>
         </S.ButtonsWrapper>
       </S.ProjectCardInformationContainer>
       <S.ProjectCardImageContainer>

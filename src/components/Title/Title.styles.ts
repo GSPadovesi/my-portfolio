@@ -7,6 +7,8 @@ const variantFontSize = {
   h2: ["24px", "30px"],
   h3: ["20px", "24px"],
   h4: ["16px", "20px"],
+  h5: ["14px", "16px"],
+  h6: ["12px", "14px"],
 } as const;
 
 export const StyledTitle = styled(

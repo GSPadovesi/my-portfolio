@@ -11,6 +11,7 @@ export const Contact = (props: any) => {
   return (
     <S.Contact id={id}>
       <S.ContactContainer>
+        <S.TrajectoryExperienceCover src='/skills.svg' alt='skills' />
         <Title $variant='h1' $fontWeight='600' $fontColor='#fff'>Minhas redes sociais e contato</Title>
         <S.NetworkSocialWrapper>
           {medias.map((media) => <MediaButton key={media.id} icon={media.icon} onClick={() => window.open(media.url, '_blank')} />)}
@@ -22,7 +23,6 @@ export const Contact = (props: any) => {
           <Paragraph $fontWeight='600'>📩 gspadovesi@gmail.com</Paragraph>
           <Paragraph $fontWeight='600'> 📞 +55 (11) 94706-3723</Paragraph>
         </div>
-
       </S.ContactContainer>
     </S.Contact>
   )

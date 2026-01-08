@@ -67,3 +67,12 @@ export const TrajectoryExperienceCover = styled.img`
   margin-top: 60px;
   object-fit: cover;
 `
+
+export const SkillsWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+`

@@ -1,5 +1,5 @@
 export interface TitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
-  $variant?: 'h1' | 'h2' | 'h3' | 'h4';
+  $variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   $fontWeight?: string; 
   $textAlign?: 'left' | 'center' | 'right' | 'justify', 
   $fontColor?: string;

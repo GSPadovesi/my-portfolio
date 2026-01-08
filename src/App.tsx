@@ -1,10 +1,8 @@
 import { Header } from './components/Header/Header'
 import { Footer } from './components/Footer/Footer'
-import { Welcome } from './sections/welcome/Welcome';
-import { Trajectory } from './sections/trajectory/Trajectory';
-import { Project } from './sections/projects/Projects';
-import { Contact } from './sections/contact/contact';
-import * as S from './App.styles'
+import { Route, Routes } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
+import { ProjectPage } from './pages/ProjectPage';
 
 function App() {
   // const { themeName, setThemeName } = useContext(ThemeContext);
@@ -12,10 +10,10 @@ function App() {
   return (
     <>
       <Header />
-      <Welcome id='inicio-section' />
-      <Trajectory id='trajetoria-section' />
-      <Project id='projetos-section' />
-      <Contact id='contato-section' />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='project/:projectName' element={<ProjectPage />} />
+      </Routes>
       <Footer />
       {/* 
         

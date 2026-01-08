@@ -23,3 +23,9 @@ export const NetworkSocialWrapper = styled.div`
   flex-wrap: wrap;
   gap: 16px;
 ` 
+
+export const TrajectoryExperienceCover = styled.img`
+  width: 80%;
+  margin-top: 60px;
+  object-fit: cover;
+`

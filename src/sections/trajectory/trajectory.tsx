@@ -1,7 +1,8 @@
-import { experienceInfo } from './Trajectory.constant'
+import { experienceInfo, skillsInfo } from './Trajectory.constant'
 import { ExperienceCard } from '../../components/Experiencecard/ExperienceCard';
 import { Title } from '../../components/Title/Title';
 import { Paragraph } from '../../components/Paragraph/Paragraph';
+import { Skills } from '../../components/Skills/Skills';
 import * as S from './Trajectory.styles';
 
 export const Trajectory = (props: any) => {
@@ -51,13 +52,12 @@ export const Trajectory = (props: any) => {
         <S.TrajectoryExperienceContainer id='experiencias-section'>
           <Title $variant='h2' $fontColor='#fff' $textAlign='left'>Experiências de trabalho</Title>
           <S.TrajectoryExperienceGrid>
-            {experienceInfo.map((item) => (
-              <ExperienceCard key={item.id} {...item} />
-            ))}
+            {experienceInfo.map((item) => <ExperienceCard key={item.id} {...item} />)}
           </S.TrajectoryExperienceGrid>
           <Paragraph $fontSize='28px' $fontColor='#fff' $textAlign='left'>Atualmente possuo conhecimento avançado nas seguintes <span style={{ color: '#A254E9', borderBottom: '2px solid #7127BA' }}>ferramentas</span></Paragraph>
-          <S.TrajectoryExperienceCover src='/skills.svg' alt='skills' />
-          {/* <Icon /> */}
+          <S.SkillsWrapper>
+            {skillsInfo.map((skill) => <Skills key={skill.id} {...skill} />)}
+          </S.SkillsWrapper>
         </S.TrajectoryExperienceContainer>
       </S.TrajectoryContainer>
       <span className='line' />
