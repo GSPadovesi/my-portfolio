@@ -1,7 +1,12 @@
+export type TitleVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type TitleSize = 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+export type TitleAlign = 'left' | 'center' | 'right' | 'justify';
+
 export interface TitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
-  $variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  $variant?: TitleVariant;
+  $size?: TitleSize;
   $fontWeight?: string; 
-  $textAlign?: 'left' | 'center' | 'right' | 'justify', 
+  $textAlign?: TitleAlign, 
   $fontColor?: string;
   children: React.ReactNode;
 }

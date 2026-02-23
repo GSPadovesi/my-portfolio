@@ -1,2 +1,2 @@
 export { Paragraph } from './Paragraph';
-export type { ParagraphProps } from './Paragraph.types';
+export type { ParagraphProps, ParagraphSize, ParagraphAlign } from './Paragraph.types';

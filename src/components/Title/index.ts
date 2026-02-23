@@ -1,2 +1,2 @@
 export { Title } from './Title';
-export type { TitleProps } from './Title.types';
+export type { TitleProps, TitleVariant, TitleSize, TitleAlign } from './Title.types';
