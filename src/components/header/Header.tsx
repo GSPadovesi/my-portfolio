@@ -1,12 +1,11 @@
 import { useEffect, useState, useCallback, useMemo } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { navItems } from "./Header.constants";
-import { useScrollSpy } from "../../hooks/useScrollSpy";
-import { scrollToSection } from "../../utils/scrollToSection";
+import { useScrollSpy } from "../../hooks";
+import { scrollToSection, redirectToLink } from "../../utils";
 import { HeaderHamburguer } from "./HeaderHamburguer/HeaderHamburguer";
-import { redirectToLink } from "../../utils/redirectToLink";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Button } from "../Button/Button";
+import { Button } from "../index";
 import Balancer from "react-wrap-balancer";
 import * as S from './Header.styles'
 
@@ -48,10 +47,10 @@ export const Header = () => {
               <S.SideMenuItem key={index} $isActive={item.id === activeSection} onClick={() => onClick(item.id)}>{item.label}</S.SideMenuItem>
             ))}
           </S.NavLinks>}
-          <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-            {isProjectPage && <Button $variant="primary" onClick={onBack}>Voltar para a pagina principal</Button>}
+          <S.ActionGroup>
+            {isProjectPage && <Button $variant="primary" onClick={onBack}>Voltar para a página principal</Button>}
             <S.WhatsAppButton onClick={() => redirectToLink('https://wa.me/11947063723?&text=Ola, tudo bem?')}>Enviar Whatsapp</S.WhatsAppButton>
-          </div>
+          </S.ActionGroup>
         </div>
       </S.Container>
       <S.SideMenu isOpen={isOpen}>

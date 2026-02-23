@@ -33,7 +33,7 @@ export const ProjectsContainer = styled.div`
   gap: 36px;
 
   @media(min-width: 1024px){
-    gap: 80px;
+    gap: 56px;
   }
 `
 
@@ -49,7 +49,7 @@ export const ProjectTitle = styled.h2`
     font-size: 36px;
   }
   
-  @media(min-width: 1440px){
-    font-size: 46px;
+  @media(min-width: 1280px){
+    font-size: 44px;
   }
 `

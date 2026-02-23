@@ -5,6 +5,7 @@ export type TitleAlign = 'left' | 'center' | 'right' | 'justify';
 export interface TitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
   $variant?: TitleVariant;
   $size?: TitleSize;
+  $fontFamily?: string;
   $fontWeight?: string; 
   $textAlign?: TitleAlign, 
   $fontColor?: string;

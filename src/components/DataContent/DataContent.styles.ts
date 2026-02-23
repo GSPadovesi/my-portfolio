@@ -34,7 +34,7 @@ export const DataContentSpan = styled.span`
     font-size: 40px;
   }
 
-   @media(min-width: 1440px){
+   @media(min-width: 1280px){
     font-size: 60px;
   }
 `

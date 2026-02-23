@@ -1,4 +1,4 @@
-import type { experienceinfoprops } from '../../sections/trajectory/Trajectory.constant'
+import type { experienceinfoprops } from '../../sections'
 import * as S from './ExperienceCard.styles'
 
 export const ExperienceCard = ({ id, label, icon }: experienceinfoprops) => {

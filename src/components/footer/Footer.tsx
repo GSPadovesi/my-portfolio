@@ -1,7 +1,25 @@
-import { Paragraph } from "../Paragraph/Paragraph"
+import styled from "styled-components";
+import { Paragraph } from "../index";
+
+const FooterContainer = styled.footer`
+  width: 100%;
+  min-height: 50px;
+  background-color: #A254E9;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+`;
+
+const FooterText = styled(Paragraph)`
+  width: 100%;
+`;
 
 export const Footer = () => {
-  return <div style={{ width: '100%', minHeight: '50px', backgroundColor: "#A254E9", display: 'flex', justifyContent: 'center', padding: 16 }}>
-    <Paragraph style={{ width: '100%' }} $textAlign="center">© 2026 Gabriel Santana — Desenvolvedor Web. Todos os direitos reservados.</Paragraph>
-  </div>
+  return (
+    <FooterContainer>
+      <FooterText $size='sm' $balance={false} $textAlign="center">
+        © 2026 Gabriel Santana - Desenvolvedor Web. Todos os direitos reservados.
+      </FooterText>
+    </FooterContainer>
+  )
 }

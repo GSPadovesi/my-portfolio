@@ -2,7 +2,7 @@ import type { ParagraphProps } from './Paragraph.types';
 import Balancer from 'react-wrap-balancer';
 import * as S from './Paragraph.styles';
 
-export const Paragraph: React.FC<ParagraphProps> = ({ children, $size = 'md', $fontSize, $fontWeight, $textAlign, $fontColor, $lineHeight, $fontStyle, ...props }) => {
+export const Paragraph: React.FC<ParagraphProps> = ({ children, $balance = false, $size = 'md', $fontSize, $fontWeight, $textAlign, $fontColor, $lineHeight, $fontStyle, ...props }) => {
   return <S.StyledParagraph
     $size={$size}
     $fontSize={$fontSize}
@@ -13,6 +13,6 @@ export const Paragraph: React.FC<ParagraphProps> = ({ children, $size = 'md', $f
     $fontStyle={$fontStyle}
     {...props}
   >
-    <Balancer>{children}</Balancer>
+    {$balance ? <Balancer>{children}</Balancer> : children}
   </S.StyledParagraph>;
 }

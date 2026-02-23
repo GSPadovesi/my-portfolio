@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Paragraph } from '../../components';
 
 export const Contact = styled.section`
   width: 100%;
@@ -24,8 +25,14 @@ export const NetworkSocialWrapper = styled.div`
   gap: 16px;
 ` 
 
-export const TrajectoryExperienceCover = styled.img`
-  width: 80%;
-  margin-top: 60px;
-  object-fit: cover;
+export const ContactInformation = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`
+
+export const ContactDescription = styled(Paragraph)`
+  max-width: 600px;
+  align-self: flex-start;
 `

@@ -22,7 +22,7 @@ export const Container = styled.div`
   
   .desktoplist{
     display: none;
-    gap: 64px;
+    gap: 56px;
 
     @media(min-width: 1024px){
       display: flex;
@@ -44,7 +44,7 @@ export const Text = styled.h1`
 export const NavLinks = styled.nav`
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
   list-style: none;
 
 
@@ -60,7 +60,7 @@ export const NavLinks = styled.nav`
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     display: none;
   }
 `;
@@ -82,7 +82,7 @@ export const WhatsAppButton = styled.button`
     background-color: #843dbe;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     display: none;
   }
 `;
@@ -94,7 +94,7 @@ export const MobileMenuIcon = styled.button`
   color: #fff;
   cursor: pointer;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     display: block;
   }
 `;
@@ -164,7 +164,7 @@ export const SideMenuItem = styled.li<{ $isActive?: boolean }>`
     transition: transform 0.3s ease-in-out;
   }
 
-  @media(max-width: 768px) {
+  @media(max-width: 1023px) {
     font-weight: 500;
     color: ${({ $isActive }) => ($isActive ? "#A254E9" : "#fff")}; 
     
@@ -173,6 +173,12 @@ export const SideMenuItem = styled.li<{ $isActive?: boolean }>`
     }
   }
 `;
+
+export const ActionGroup = styled.div`
+  display: flex;
+  gap: 16px;
+  align-items: center;
+`
 
 export const WhatsAppCircle = styled.div`
   background-color: #25d366;

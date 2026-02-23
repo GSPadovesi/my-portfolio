@@ -38,7 +38,7 @@ export const TrajectoryExperienceContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 24px;
 
   >svg{
     width: 100%;
@@ -46,7 +46,7 @@ export const TrajectoryExperienceContainer = styled.div`
   }
 
   @media(min-width: 1024px){
-    margin-top: 60px;
+    margin-top: 56px;
   }
 `
 
@@ -54,9 +54,9 @@ export const TrajectoryExperienceGrid = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, minmax(240px, 1fr));
-  gap: 20px;
+  gap: 24px;
   
-  @media(max-width: 1024px) {
+  @media(max-width: 1023px) {
     grid-template-columns: repeat(1, minmax(240px, 1fr));
   }
 
@@ -64,7 +64,7 @@ export const TrajectoryExperienceGrid = styled.div`
 
 export const TrajectoryExperienceCover = styled.img`
   width: 80%;
-  margin-top: 60px;
+  margin-top: 56px;
   object-fit: cover;
 `
 
@@ -75,4 +75,9 @@ export const SkillsWrapper = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
+`
+
+export const TrajectoryHighlight = styled.span`
+  color: #A254E9;
+  border-bottom: 2px solid #7127BA;
 `

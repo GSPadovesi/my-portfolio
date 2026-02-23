@@ -28,7 +28,7 @@ export const WelcomePresentation = styled.div`
   -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
 
-  @media(min-width: 1180px){
+  @media(min-width: 1280px){
     height: 80dvh;
   }
 `;
@@ -49,8 +49,14 @@ export const WelcomePresentationContainer = styled.div`
   }
 
   @media(min-width: 1024px){
-    gap: 80px;
+    gap: 56px;
   }
+`
+
+export const WelcomePresentationTextGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 `
 
 export const Cover = styled.img`
@@ -61,7 +67,7 @@ export const Cover = styled.img`
   object-fit: cover;
   box-shadow: 0 0 20px 20px rgba(155, 77, 224, 0.5);
 
-  @media(min-width: 540px){
+  @media(min-width: 576px){
     width: 200px;
     height: 200px;
   }
@@ -83,7 +89,7 @@ export const WelcomePresentationSpan = styled.span`
     font-size: 40px;
   }
 
-   @media(min-width: 1440px){
+   @media(min-width: 1280px){
     font-size: 60px;
   }
 `
@@ -99,7 +105,7 @@ export const WelcomePresentationTitle = styled.h1`
     font-size: 70px;
   }
 
-   @media(min-width: 1440px){
+   @media(min-width: 1280px){
     font-size: 120px;
   }
 `
@@ -108,7 +114,7 @@ export const WelcomeInformation = styled.div`
   width: 100%;
   height: 100%;
 
-  @media(min-width: 1180px){
+  @media(min-width: 1280px){
     /* transform: translateY(-120px); */
     margin-top: -120px;
   }
@@ -138,8 +144,14 @@ export const WelcomeInformationContent = styled.div`
 
   @media(min-width: 1024px){
     flex: 1;
-    gap: 26px;
+    gap: 24px;
   }
+`
+
+export const WelcomeInformationLead = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 `
 
 export const WelcomeInformationSpan = styled.span`

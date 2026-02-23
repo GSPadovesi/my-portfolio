@@ -8,8 +8,7 @@ export const Contact = ({ id }: ContactProps) => {
   return (
     <S.Contact id={id}>
       <S.ContactContainer>
-        {/* <S.TrajectoryExperienceCover src='/skills.svg' alt='skills' /> */}
-        <Title $variant='h1' $fontWeight='600' $fontColor='#fff'>Minhas redes sociais e contato</Title>
+        <Title $variant='h1' $size='2xl' $fontWeight='600' $fontColor='#fff'>Minhas redes sociais e contato</Title>
         <S.NetworkSocialWrapper>
           {SocialNetworksData.map((media) => (
             <MediaButton
@@ -20,13 +19,13 @@ export const Contact = ({ id }: ContactProps) => {
             />
           ))}
         </S.NetworkSocialWrapper>
-        <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <Title $variant='h3' $fontWeight='500' $fontColor='#fff'>Contato</Title>
-          <Paragraph style={{ maxWidth: '600px', alignSelf: 'flex-start' }} $fontWeight='600'>Atualmente, busco sempre inovar em novas experiências colaborativas e multidisciplinares. Também atuo em pequenos e médios projetos individuais, com foco em criar experiências digitais relevantes por meio de uma programação inovadora e bem pensada.</Paragraph>
-          <Paragraph $fontColor='#A254E9' $fontWeight='600'>Tem algum projeto em mente? Vamos conversar. </Paragraph>
-          <Paragraph $fontWeight='600'>📩 gspadovesi@gmail.com</Paragraph>
-          <Paragraph $fontWeight='600'> 📞 +55 (11) 94706-3723</Paragraph>
-        </div>
+        <S.ContactInformation>
+          <Title $variant='h3' $size='lg' $fontWeight='500' $fontColor='#fff'>Contato</Title>
+          <S.ContactDescription $balance={false} $size='md' $fontWeight='600'>Atualmente, busco sempre inovar em novas experiências colaborativas e multidisciplinares. Também atuo em pequenos e médios projetos individuais, com foco em criar experiências digitais relevantes por meio de uma programação inovadora e bem pensada.</S.ContactDescription>
+          <Paragraph $size='lg' $fontColor='#A254E9' $fontWeight='600'>Tem algum projeto em mente? Vamos conversar.</Paragraph>
+          <Paragraph $size='md' $fontWeight='600'>Email: gspadovesi@gmail.com</Paragraph>
+          <Paragraph $size='md' $fontWeight='600'>Telefone: +55 (11) 94706-3723</Paragraph>
+        </S.ContactInformation>
       </S.ContactContainer>
     </S.Contact>
   )

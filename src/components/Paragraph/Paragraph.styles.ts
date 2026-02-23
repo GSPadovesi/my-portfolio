@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import type { ParagraphSize } from './Paragraph.types';
+import type { ParagraphSize, ParagraphAlign } from './Paragraph.types';
 
 const paragraphScale: Record<ParagraphSize, { mobile: string; tablet: string; desktop: string }> = {
   sm: { mobile: '12px', tablet: '14px', desktop: '16px' },
@@ -13,7 +13,7 @@ export const StyledParagraph = styled.p<{
   $size?: ParagraphSize;
   $fontSize?: string;
   $fontWeight?: string;
-  $textAlign?: 'left' | 'center' | 'right' | 'justify';
+  $textAlign?: ParagraphAlign;
   $fontColor?: string;
   $lineHeight?: string;
   $fontStyle?: string;
@@ -26,7 +26,7 @@ export const StyledParagraph = styled.p<{
     font-weight: ${$fontWeight || 'normal'};
     text-align: ${$textAlign || 'left'};
     color: ${$fontColor || '#fff'};
-    line-height: ${$lineHeight || '1.2'};
+    line-height: ${$lineHeight || '1.6'};
     font-style: ${$fontStyle || 'normal'};
     font-family: 'Inter', sans-serif;
 

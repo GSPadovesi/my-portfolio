@@ -20,8 +20,9 @@ const variantToSize: Record<NonNullable<TitleProps['$variant']>, TitleSize> = {
 };
 
 export const StyledTitle = styled(
-  ({ $variant = 'h1', $size: _size, $fontWeight: _fontWeight, $textAlign: _textAlign, $fontColor: _fontColor, ...props }: TitleProps) => {
+  ({ $variant = 'h1', $size: _size, $fontFamily: _fontFamily, $fontWeight: _fontWeight, $textAlign: _textAlign, $fontColor: _fontColor, ...props }: TitleProps) => {
     void _size;
+    void _fontFamily;
     void _fontWeight;
     void _textAlign;
     void _fontColor;
@@ -30,12 +31,13 @@ export const StyledTitle = styled(
   }
 )<{
   $size?: TitleSize;
+  $fontFamily?: string;
   $fontWeight?: string;
   $textAlign?: 'left' | 'center' | 'right' | 'justify';
   $fontColor?: string;
   $variant?: NonNullable<TitleProps['$variant']>;
 }>`
-  ${({ theme, $size, $fontWeight, $textAlign, $fontColor, $variant = 'h1' }) => {
+  ${({ theme, $size, $fontFamily, $fontWeight, $textAlign, $fontColor, $variant = 'h1' }) => {
     const scale = titleScale[$size || variantToSize[$variant]];
     return css`
     font-size: ${scale.desktop};
@@ -43,7 +45,7 @@ export const StyledTitle = styled(
     font-weight: ${$fontWeight || 600};
     text-align: ${$textAlign || 'left'};
     color: ${$fontColor || theme.colors.text.primary};
-    font-family: 'Inter', sans-serif;
+    font-family: ${$fontFamily || 'Inter'}, sans-serif;
     width: 100%;
 
     @media(max-width: 1023px){

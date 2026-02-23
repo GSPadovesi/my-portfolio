@@ -12,10 +12,9 @@ export const Projects = ({ id }: ProjectsSectionProps) => {
     <S.Projects id={id}>
       <S.ProjectsContainer>
         <S.ProjectTitle>Projetos que participei</S.ProjectTitle>
-        {projects.map((project) => {
-          const isOdd = project.id % 2 !== 0;
-          return <ProjectCard key={project.id} isOld={isOdd} {...project} />
-        })}
+        {projects.map((project) => (
+          <ProjectCard key={project.id} isOld={project.id % 2 !== 0} {...project} />
+        ))}
       </S.ProjectsContainer>
       <span className='line' />
     </S.Projects>

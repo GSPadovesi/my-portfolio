@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import { toProjectSlug, projectsData } from '../../utils';
-import { Title, Paragraph, Button } from '../../components';
+import { Button } from '../../components';
 import type { ProjectProps } from './Project.types';
 import * as S from './Project.styles'
 
@@ -14,20 +14,24 @@ export const Project = ({ id }: ProjectProps) => {
   if (!project) {
     return (
       <S.ProjectSection>
-        <Title style={{ fontFamily: 'poppins', marginBottom: '20px' }} $variant='h1' $fontWeight='600' $fontColor='#CCD6F6'>
-          Projeto não encontrado
-        </Title>
-        <Paragraph $lineHeight='1.5' style={{ marginBottom: '20px' }}>
-          O projeto que você tentou acessar não existe ou foi renomeado.
-        </Paragraph>
-        <Button $variant='primary' onClick={() => navigate('/')}>Voltar para a página principal</Button>
+        <S.ProjectContainer>
+          <S.ProjectTitle $variant='h1' $size='2xl' $fontFamily='Poppins' $fontWeight='600' $fontColor='#CCD6F6'>
+            Projeto não encontrado
+          </S.ProjectTitle>
+          <S.ProjectMessage $balance={false} $size='md' $lineHeight='1.5'>
+            O projeto que você tentou acessar não existe ou foi renomeado.
+          </S.ProjectMessage>
+          <Button $variant='primary' onClick={() => navigate('/')}>Voltar para a página principal</Button>
+        </S.ProjectContainer>
       </S.ProjectSection>
     );
   }
 
   return (
     <S.ProjectSection id={id}>
-      <Title style={{ fontFamily: 'poppins', marginBottom: '20px' }} $variant='h1' $fontWeight='600' $fontColor='#CCD6F6'>{project?.title}</Title>
+      <S.ProjectContainer>
+        <S.ProjectTitle $variant='h1' $size='2xl' $fontFamily='Poppins' $fontWeight='600' $fontColor='#CCD6F6'>{project.title}</S.ProjectTitle>
+      </S.ProjectContainer>
     </S.ProjectSection>
   )
 }

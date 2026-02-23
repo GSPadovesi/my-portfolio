@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react'
+import type { WrittingProps } from './Typewriter.types';
 import * as S from './Typewriter.styles'
-
-interface WrittingProps {
-  label: string
-}
 
 export const Typewriter = ({ label }: WrittingProps) => {
   const [text, setText] = useState('');

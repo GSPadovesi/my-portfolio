@@ -3,11 +3,12 @@ import React from 'react'
 import Balancer from 'react-wrap-balancer'
 import * as S from './Title.styles'
 
-export const Title: React.FC<TitleProps> = ({ children, $variant = 'h1', $size, $fontWeight, $textAlign, $fontColor, ...props }) => {
+export const Title: React.FC<TitleProps> = ({ children, $variant = 'h1', $size, $fontFamily, $fontWeight, $textAlign, $fontColor, ...props }) => {
   return <S.StyledTitle
     as={$variant}
     $variant={$variant}
     $size={$size}
+    $fontFamily={$fontFamily}
     $fontWeight={$fontWeight}
     $textAlign={$textAlign}
     $fontColor={$fontColor}

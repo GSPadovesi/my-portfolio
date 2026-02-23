@@ -11,23 +11,23 @@ export const Welcome = ({ id }: WelcomeProps) => {
       <S.WelcomePresentation>
         <S.WelcomePresentationContainer>
           <S.Cover src='/eu.png' />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <S.WelcomePresentationTextGroup>
             <S.WelcomePresentationSpan>Desenvolvedor <Rocket /></S.WelcomePresentationSpan>
             <S.WelcomePresentationTitle>full stack</S.WelcomePresentationTitle>
-          </div>
+          </S.WelcomePresentationTextGroup>
         </S.WelcomePresentationContainer>
       </S.WelcomePresentation>
       <S.WelcomeInformation>
         <S.WelcomeInformationContainer>
           <S.WelcomeInformationContent>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <S.WelcomeInformationLead>
               <Typewriter label='Desenvolvedor de software.' />
               <S.WelcomeInformationSpan>Atualmente trabalhando na empresa <a href='https://www.gastech.com.br/' target='_blank' rel='noreferrer noopener'>GAS TECH</a></S.WelcomeInformationSpan>
-            </div>
-            <Paragraph $fontSize='20px' $lineHeight='1.4'>Desenvolvedor de software, atuando na área há 2 anos. Crio sites e sistemas funcionais que equilibram a experiência do usuário com os objetivos do negócio, unindo estética, desempenho e propósito.</Paragraph>
+            </S.WelcomeInformationLead>
+            <Paragraph $balance={false} $size='lg' $lineHeight='1.4'>Desenvolvedor de software, atuando na área há 2 anos. Crio sites e sistemas funcionais que equilibram a experiência do usuário com os objetivos do negócio, unindo estética, desempenho e propósito.</Paragraph>
             <S.WelcomeInformationWrapperButtons>
               <Button $variant='primary' $size='large' onClick={() => redirectToLink('https://wa.me/11947063723?&text=Ola, tudo bem?')}>Enviar Whatsapp</Button>
-              <Button $variant='secondary' $size='large' style={{}} onClick={() => redirectToLink('https://www.linkedin.com/in/gabriel-santana-padovesi-59b1041b7/')}><img src='/linkedinbutton.svg' alt='icone linkedin' /> Visitar meu linkedin</Button>
+              <Button $variant='secondary' $size='large' onClick={() => redirectToLink('https://www.linkedin.com/in/gabriel-santana-padovesi-59b1041b7/')}><img src='/linkedinbutton.svg' alt='icone linkedin' /> Visitar meu linkedin</Button>
             </S.WelcomeInformationWrapperButtons>
           </S.WelcomeInformationContent>
         </S.WelcomeInformationContainer>
@@ -36,3 +36,7 @@ export const Welcome = ({ id }: WelcomeProps) => {
     </S.Welcome>
   )
 }
+
+
+
+
