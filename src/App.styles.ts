@@ -8,7 +8,7 @@ export const WhatsAppCircle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: ${({ theme }) => theme.shadows.circle};
+  box-shadow: 0 0 40px 10px rgba(155, 77, 224, 0.5);
   cursor: pointer;
 
   @media(max-width: 768px){

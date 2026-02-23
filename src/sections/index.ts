@@ -1,0 +1,5 @@
+export * from './contact'
+export * from './project'
+export * from './projects'
+export * from './trajectory'
+export * from './welcome'

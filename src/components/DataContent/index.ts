@@ -1,0 +1,1 @@
+export { DataContent } from './DataContent';

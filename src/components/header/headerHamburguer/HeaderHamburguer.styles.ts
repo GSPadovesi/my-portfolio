@@ -1,8 +1,11 @@
 import styled, { css } from 'styled-components';
 
-export const HeaderHamburguer = styled.div<any>`
+interface HeaderHamburguerStyleProps {
+  isOpen: boolean;
+}
+
+export const HeaderHamburguer = styled.div<HeaderHamburguerStyleProps>`
   ${({ isOpen }) => css`
-    width: 32px;
     min-width: 28px;
     min-height: 24px;
     position: relative;
@@ -26,12 +29,12 @@ export const HeaderHamburguer = styled.div<any>`
     }
   `};
 
-  @media(min-width: 769px) {
+  @media(min-width: 1024px) {
     display: none;
   }
 `
 
-export const Hamburger = styled.span<any>`
+export const Hamburger = styled.span<HeaderHamburguerStyleProps>`
   ${({ isOpen }) => css`
     position: relative;
     width: 32px;

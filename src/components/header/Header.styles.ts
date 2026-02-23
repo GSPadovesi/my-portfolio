@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 export const Header = styled.header<{ $isScrolled?: boolean }>`
   width: 100%;
@@ -24,7 +24,7 @@ export const Container = styled.div`
     display: none;
     gap: 64px;
 
-    @media(min-width: 770px){
+    @media(min-width: 1024px){
       display: flex;
     }
   }
@@ -60,7 +60,7 @@ export const NavLinks = styled.nav`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
@@ -94,7 +94,7 @@ export const MobileMenuIcon = styled.button`
   color: #fff;
   cursor: pointer;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: block;
   }
 `;

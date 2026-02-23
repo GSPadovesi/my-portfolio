@@ -1,12 +1,13 @@
 import * as S from './Modal.styles';
+import type { ModalProps } from './Modal.types';
 
-export const Modal = (props: any) => {
-  if (!props.isOpen) return null;
+export const Modal = ({ isOpen, setIsOpen, children }: ModalProps) => {
+  if (!isOpen) return null;
 
   return (
-    <S.Modal onClick={() => props.setIsOpen(!props.isOpen)}>
+    <S.Modal onClick={() => setIsOpen(!isOpen)}>
       <S.ModalCard onClick={(e) => e.stopPropagation()}>
-        {props.children}
+        {children}
       </S.ModalCard>
     </S.Modal>
   )

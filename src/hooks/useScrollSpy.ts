@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { navItems } from '../components/Header/Header.constants';
+import { navItems } from '../components';
 
 
 const HEADER_H = 100;

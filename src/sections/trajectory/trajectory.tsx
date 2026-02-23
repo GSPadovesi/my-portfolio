@@ -1,13 +1,9 @@
 import { experienceInfo, skillsInfo } from './Trajectory.constant'
-import { ExperienceCard } from '../../components/Experiencecard/ExperienceCard';
-import { Title } from '../../components/Title/Title';
-import { Paragraph } from '../../components/Paragraph/Paragraph';
-import { Skills } from '../../components/Skills/Skills';
+import { Title, Paragraph, Skills, ExperienceCard } from '../../components';
+import type { TrajectoryProps } from './Trajectory.types';
 import * as S from './Trajectory.styles';
 
-export const Trajectory = (props: any) => {
-  const { id } = props;
-
+export const Trajectory = ({ id }: TrajectoryProps) => {
   return (
     <S.Trajectory id={id}>
       <S.TrajectoryContainer>

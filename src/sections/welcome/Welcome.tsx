@@ -1,13 +1,10 @@
 import { Rocket } from 'lucide-react'
-import { Typewriter } from '../../components/Typewriter/Typewriter';
-import { Button } from '../../components/Button/Button';
-import { redirectToLink } from '../../utils/redirectToLink';
-import { Paragraph } from '../../components/Paragraph/Paragraph';
-import Balancer from 'react-wrap-balancer';
+import { Button, Paragraph, Typewriter } from '../../components';
+import { redirectToLink } from '../../utils';
+import type { WelcomeProps } from './Welcome.types';
 import * as S from './Welcome.styles'
 
-export const Welcome = (props: any) => {
-  const { id } = props;
+export const Welcome = ({ id }: WelcomeProps) => {
 
   return (
     <S.Welcome id={id}>
@@ -25,7 +22,7 @@ export const Welcome = (props: any) => {
           <S.WelcomeInformationContent>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <Typewriter label='Desenvolvedor de software.' />
-              <S.WelcomeInformationSpan>Atualmente trabalhando na empresa <a href='https://www.gastech.com.br/' target='_blank'>GAS TECH</a></S.WelcomeInformationSpan>
+              <S.WelcomeInformationSpan>Atualmente trabalhando na empresa <a href='https://www.gastech.com.br/' target='_blank' rel='noreferrer noopener'>GAS TECH</a></S.WelcomeInformationSpan>
             </div>
             <Paragraph $fontSize='20px' $lineHeight='1.4'>Desenvolvedor de software, atuando na área há 2 anos. Crio sites e sistemas funcionais que equilibram a experiência do usuário com os objetivos do negócio, unindo estética, desempenho e propósito.</Paragraph>
             <S.WelcomeInformationWrapperButtons>

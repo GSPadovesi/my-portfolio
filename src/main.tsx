@@ -1,8 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { GlobalStyles } from './styles/GlobalStyles' // ou o caminho correto no seu projeto
-import { ThemeProvider } from './context/ThemeContext.tsx'
-import { Main } from './styles/MainStyle.ts'
+import { Main, GlobalStyles } from './styles'
+import { ThemeProvider } from './context'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App.tsx'
 

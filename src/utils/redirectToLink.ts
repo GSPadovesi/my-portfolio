@@ -1,5 +1,7 @@
-import { useCallback } from "react";
+export const redirectToLink = (link: string) => {
+  const normalized = link.trim();
+  if (!normalized) return false;
 
-export  const redirectToLink = (link: string) => {
-  window.open(`${link}`, "_blank");
+  window.open(normalized, "_blank", "noopener,noreferrer");
+  return true;
 };

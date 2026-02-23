@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Title } from '../Title/Title';
 
 export const Skills = styled.div<{ $color?: string }>`

@@ -4,7 +4,7 @@ import { Project } from "../sections/project/Project"
 export const ProjectPage = () => {
   return (
     <>
-      <Project />
+      <Project id='Projetos' />
     </>
   )
 }

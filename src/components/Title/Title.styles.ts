@@ -1,5 +1,5 @@
 import React from 'react';
-import { TitleProps } from './Title.types';
+import type { TitleProps } from './Title.types';
 import styled, { css } from 'styled-components';
 
 const variantFontSize = {
@@ -12,7 +12,10 @@ const variantFontSize = {
 } as const;
 
 export const StyledTitle = styled(
-  ({ $variant = 'h1', $fontWeight, $textAlign, $fontColor, ...props }: TitleProps) => {
+  ({ $variant = 'h1', $fontWeight: _fontWeight, $textAlign: _textAlign, $fontColor: _fontColor, ...props }: TitleProps) => {
+    void _fontWeight;
+    void _textAlign;
+    void _fontColor;
     const Tag = $variant || 'h1';
     return React.createElement(Tag, props);
   }

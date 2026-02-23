@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import * as S from './Typewriter.styles'
 
 interface WrittingProps {
@@ -9,15 +9,23 @@ export const Typewriter = ({ label }: WrittingProps) => {
   const [text, setText] = useState('');
   const [isComplete, setIsComplete] = useState(false);
 
-  const Writing = useCallback((text: string) => {
-    for (let index = 0; index < text.length; index++) {
-      setTimeout(() => setText((prev) => prev + text.charAt(index)), 100 * index);
-    }
-    setIsComplete(true);
-    return;
-  }, []);
+  useEffect(() => {
+    setText('');
+    setIsComplete(false);
 
-  useEffect(() => () => Writing(label), []);
+    const timeouts: number[] = [];
+    for (let index = 0; index < label.length; index++) {
+      const timeoutId = window.setTimeout(() => {
+        setText((prev) => prev + label.charAt(index));
+        if (index === label.length - 1) setIsComplete(true);
+      }, 100 * index);
+      timeouts.push(timeoutId);
+    }
+
+    return () => {
+      timeouts.forEach((timeoutId) => window.clearTimeout(timeoutId));
+    };
+  }, [label]);
 
   //Se for pra ficar repetindo o texto sempre, descomentar esse codigo abaixo e comentar o de cima
   // useEffect(() => {

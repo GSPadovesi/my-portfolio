@@ -1,4 +1,14 @@
-export const projectsData = [
+export interface ProjectData {
+  id: number;
+  title: string;
+  enterprise: string;
+  description: string;
+  link: string;
+  technologies: string[];
+  cover: string;
+}
+
+export const projectsData: ProjectData[] = [
   {
     id: 1,
     title: "Eureka Digital",

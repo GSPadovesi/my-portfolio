@@ -1,4 +1,4 @@
-import { ParagraphProps } from './Paragraph.types';
+import type { ParagraphProps } from './Paragraph.types';
 import Balancer from 'react-wrap-balancer';
 import * as S from './Paragraph.styles';
 

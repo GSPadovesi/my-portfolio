@@ -1,13 +1,14 @@
-import { Title } from '../Title/Title';
 import * as S from './Skills.styles'
+import type { SkillsProps } from './Skills.types'
 
-export const Skills = (props: any) => {
-  console.log(props);
+
+
+export const Skills = ({ color, icon, label }: SkillsProps) => {
   return (
-    <S.Skills $color={props.color}>
+    <S.Skills $color={color}>
       <S.SkillsContent>
-        <img src={props.icon} alt='skill icon' />
-        <S.SkillTitle $variant='h6' $color={props.color}>{props.label}</S.SkillTitle>
+        <img src={icon} alt='skill icon' />
+        <S.SkillTitle $variant='h6' $color={color}>{label}</S.SkillTitle>
       </S.SkillsContent>
     </S.Skills>
   )

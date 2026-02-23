@@ -3,17 +3,19 @@ import { Button } from '../Button/Button';
 import { Paragraph } from '../Paragraph/Paragraph';
 import { Title } from '../Title/Title'
 import { redirectToLink } from '../../utils/redirectToLink';
-import * as S from './ProjectCard.styles'
 import { useCallback, useState } from 'react';
 import { Modal } from '../Modal/Modal';
 import { useNavigate } from 'react-router-dom';
+import { toProjectSlug } from '../../utils/projectSlug';
+import type { ProjectCardProps } from './ProjectCard.types';
+import * as S from './ProjectCard.styles'
 
-export const ProjectCard = (props: any) => {
+export const ProjectCard = (props: ProjectCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
   const onNavigate = useCallback((projectName: string) => {
-    navigate(`/project/${projectName.split(' ').join('-')}`);
+    navigate(`/project/${toProjectSlug(projectName)}`);
   }, [navigate]);
 
   return (
@@ -27,7 +29,7 @@ export const ProjectCard = (props: any) => {
           <Paragraph>{props.description}</Paragraph>
         </S.InformationDescriptionContainer>
         <S.ButtonsWrapper isOdd={props.isOld}>
-          <Button $variant="primary" $size="large" onClick={() => redirectToLink(`${props.link}`)}>Ir ao site oficial</Button>
+          <Button $variant="primary" $size="large" disabled={!props.link.trim()} onClick={() => redirectToLink(props.link)}>Ir ao site oficial</Button>
           <Button $variant="secondary" $size="large" onClick={() => onNavigate(props.title)}>Ver mais sobre</Button>
         </S.ButtonsWrapper>
       </S.ProjectCardInformationContainer>

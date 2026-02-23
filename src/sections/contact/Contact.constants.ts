@@ -1,5 +1,3 @@
-import { Facebook } from "lucide-react";
-
 export const SocialNetworksData = [
   {
     id: 1,

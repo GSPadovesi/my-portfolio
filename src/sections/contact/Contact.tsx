@@ -1,20 +1,24 @@
-import { MediaButton } from '../../components/MediaButton/MediaButton';
-import { Paragraph } from '../../components/Paragraph/Paragraph';
-import { Title } from '../../components/Title/Title';
+import { Title, MediaButton, Paragraph } from '../../components';
 import { SocialNetworksData } from './Contact.constants';
+import { redirectToLink } from '../../utils';
+import type { ContactProps } from './Contact.types';
 import * as S from './Contact.styles';
 
-export const Contact = (props: any) => {
-  const { id } = props;
-  const medias = SocialNetworksData;
-
+export const Contact = ({ id }: ContactProps) => {
   return (
     <S.Contact id={id}>
       <S.ContactContainer>
         {/* <S.TrajectoryExperienceCover src='/skills.svg' alt='skills' /> */}
         <Title $variant='h1' $fontWeight='600' $fontColor='#fff'>Minhas redes sociais e contato</Title>
         <S.NetworkSocialWrapper>
-          {medias.map((media) => <MediaButton key={media.id} icon={media.icon} onClick={() => window.open(media.url, '_blank')} />)}
+          {SocialNetworksData.map((media) => (
+            <MediaButton
+              key={media.id}
+              icon={media.icon}
+              disabled={!media.url.trim()}
+              onClick={() => redirectToLink(media.url)}
+            />
+          ))}
         </S.NetworkSocialWrapper>
         <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 16 }}>
           <Title $variant='h3' $fontWeight='500' $fontColor='#fff'>Contato</Title>

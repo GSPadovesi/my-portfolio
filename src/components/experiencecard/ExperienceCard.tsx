@@ -1,5 +1,4 @@
-import { useMemo } from 'react'
-import { experienceinfoprops } from '../../sections/trajectory/Trajectory.constant'
+import type { experienceinfoprops } from '../../sections/trajectory/Trajectory.constant'
 import * as S from './ExperienceCard.styles'
 
 export const ExperienceCard = ({ id, label, icon }: experienceinfoprops) => {

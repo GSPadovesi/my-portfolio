@@ -9,6 +9,12 @@ export const MediaButton = styled.button`
   align-items: center;
   justify-content: center;
   cursor: pointer;  
+  border: none;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 
   >img{
     width: 30px;

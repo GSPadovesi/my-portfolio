@@ -1,14 +1,11 @@
-import { Contact } from "../sections/contact/Contact"
-import { Project } from "../sections/projects/Projects"
-import { Trajectory } from "../sections/trajectory/Trajectory"
-import { Welcome } from "../sections/welcome/Welcome"
+import { Welcome, Trajectory, Projects, Contact } from "../sections"
 
 export const HomePage = () => {
   return (
     <>
       <Welcome id='inicio-section' />
       <Trajectory id='trajetoria-section' />
-      <Project id='projetos-section' />
+      <Projects id='projetos-section' />
       <Contact id='contato-section' />
     </>
   )

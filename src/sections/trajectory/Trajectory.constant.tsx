@@ -1,8 +1,4 @@
-export interface experienceinfoprops {
-  id: number;
-  label: string;
-  icon: any
-}
+import type { experienceinfoprops, SkillInfo } from "./Trajectory.types"
 
 export const experienceInfo: experienceinfoprops[] = [
   { id: 1, label: 'Plataformas Online', icon: '/IconPlataformOnline.svg' },
@@ -11,7 +7,7 @@ export const experienceInfo: experienceinfoprops[] = [
   { id: 4, label: 'Aplicativos Mobile', icon: '/IconAppMobiles.svg' },
 ]
 
-export const skillsInfo = [
+export const skillsInfo: SkillInfo[] = [
   { id: 1, label: 'HTML5', icon: '/html.png', color: '#E34F26' },
   { id: 2, label: 'CSS3', icon: '/css.png', color: '#264DE4' },
   { id: 3, label: 'JavaScript', icon: '/javascript.png', color: '#F7DF1E' },

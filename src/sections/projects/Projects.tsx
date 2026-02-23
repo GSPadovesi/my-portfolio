@@ -1,9 +1,12 @@
-import { ProjectCard } from '../../components/ProjectCard/ProjectCard';
-import { projectsData } from '../../utils/projectsData';
+import { ProjectCard } from '../../components';
+import { projectsData } from '../../utils';
 import * as S from './Projects.styles'
 
-export const Project = (props: any) => {
-  const { id } = props;
+interface ProjectsSectionProps {
+  id: string;
+}
+
+export const Projects = ({ id }: ProjectsSectionProps) => {
   const projects = projectsData;
   return (
     <S.Projects id={id}>

@@ -1,12 +1,13 @@
-import { useCallback } from 'react';
 import * as S from './HeaderHamburguer.styles';
 
-export const HeaderHamburguer = (props: any) => {
-  const { isOpen, setIsOpen } = props;
-  const onClick = useCallback(() => setIsOpen(!isOpen), [isOpen, setIsOpen]);
+interface HeaderHamburguerProps {
+  isOpen: boolean;
+}
+
+export const HeaderHamburguer = ({ isOpen }: HeaderHamburguerProps) => {
 
   return (
-    <S.HeaderHamburguer isOpen={isOpen} onClick={onClick}>
+    <S.HeaderHamburguer isOpen={isOpen}>
       <S.Hamburger isOpen={isOpen} />
     </S.HeaderHamburguer>
   )

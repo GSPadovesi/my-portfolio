@@ -1,4 +1,4 @@
-import { TitleProps } from './Title.types'
+import type { TitleProps } from './Title.types'
 import React from 'react'
 import Balancer from 'react-wrap-balancer'
 import * as S from './Title.styles'
