@@ -1,69 +1,76 @@
-# React + TypeScript + Vite
+# Portfolio - Gabriel Santana Padovesi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio profissional desenvolvido para apresentar minha trajetoria, especialidades tecnicas, experiencia de mercado e projetos reais em tecnologia educacional.
 
-Currently, two official plugins are available:
+## Analise Geral do Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### O que este projeto e
 
-## Expanding the ESLint configuration
+Este repositorio contem uma aplicacao web de portfolio pessoal, com foco em:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- posicionamento profissional como Desenvolvedor Full Stack;
+- apresentacao de experiencia e stack tecnica;
+- exibicao de projetos com contexto de negocio;
+- conversao de visitantes para contato (LinkedIn, WhatsApp e email).
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Stack e arquitetura
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- React 19 + TypeScript
+- Vite 7 (build e desenvolvimento)
+- Styled Components 6 (estilizacao)
+- React Router DOM 7 (roteamento)
+- react-wrap-balancer (melhor distribuicao de texto)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+A arquitetura esta organizada por responsabilidade:
+
+- `src/pages`: composicao das telas (`HomePage` e `ProjectPage`);
+- `src/sections`: blocos principais da landing page (`Welcome`, `Trajectory`, `Projects`, `Contact`);
+- `src/components`: componentes reutilizaveis (Title, Paragraph, Button, Card, Header, Footer etc.);
+- `src/utils`: dados e funcoes auxiliares (projetos, slug, redirecionamento, scroll).
+
+### Fluxo da aplicacao
+
+1. A rota `/` renderiza a landing principal com as secoes:
+- Welcome (apresentacao e CTA);
+- Trajectory (perfil, experiencia e skills);
+- Projects (cards de projetos);
+- Contact (redes sociais e contato direto).
+
+2. A rota `/project/:projectName` abre o detalhe de um projeto com base no slug.
+
+### Qualidade tecnica observada
+
+- Estrutura modular e facil de manter.
+- Componentes base de tipografia (`Title` e `Paragraph`) com escalas responsivas.
+- Reuso consistente de componentes visuais.
+- Dados de projetos centralizados em `projectsData.ts`.
+- Build, lint e tipagem integrados via scripts do projeto.
+
+### Pontos de evolucao recomendados
+
+- revisar textos com problema de codificacao em alguns arquivos;
+- padronizar ainda mais semantica de espacamento entre secoes;
+- fortalecer camada de acessibilidade (aria-labels e contraste em alguns pontos);
+- incluir testes de componentes/fluxos criticos (ex.: roteamento e cards de projetos).
+
+## Descricao Profissional (PT-BR)
+
+Sou Gabriel Santana Padovesi, Desenvolvedor Full Stack com foco em criacao de plataformas web, sistemas digitais e experiencias orientadas a resultado. Tenho atuacao pratica em projetos educacionais de media e alta complexidade, participando de ponta a ponta do desenvolvimento: interface, regras de negocio, backend, autenticacao, areas administrativas e integracoes.
+
+No portfolio, apresento trabalhos realizados em ambientes reais, com foco em performance, usabilidade e valor para o usuario final. Minha base tecnica inclui React, Next.js, TypeScript, Node.js e MongoDB, com perfil colaborativo, visao de produto e compromisso com qualidade de entrega.
+
+Meu objetivo e transformar necessidades de negocio em solucoes digitais robustas, escalaveis e bem estruturadas.
+
+## Como executar localmente
+
+```bash
+yarn
+yarn dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts disponiveis
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- `yarn dev`: inicia ambiente de desenvolvimento;
+- `yarn build`: executa TypeScript build e gera bundle de producao;
+- `yarn lint`: executa analise estatica com ESLint;
+- `yarn preview`: sobe preview do build local.
