@@ -7,7 +7,7 @@ export const Skills = ({ color, icon, label }: SkillsProps) => {
   return (
     <S.Skills $color={color}>
       <S.SkillsContent>
-        <img src={icon} alt='skill icon' />
+        <img src={icon} alt={`Logo ${label}`} />
         <S.SkillTitle $variant='h6' $color={color}>{label}</S.SkillTitle>
       </S.SkillsContent>
     </S.Skills>

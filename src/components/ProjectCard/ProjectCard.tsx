@@ -26,12 +26,19 @@ export const ProjectCard = (props: ProjectCardProps) => {
         </S.InformationDescriptionContainer>
         <S.ButtonsWrapper isOdd={props.isOld}>
           <Button $variant="primary" $size="large" disabled={!props.link.trim()} onClick={() => redirectToLink(props.link)}>Ir ao site oficial</Button>
-          <Button $variant="secondary" $size="large" onClick={() => onNavigate(props.title)}>Ver mais sobre</Button>
+          {/* <Button $variant="secondary" $size="large" onClick={() => onNavigate(props.title)}>Ver mais sobre</Button> */}
         </S.ButtonsWrapper>
       </S.ProjectCardInformationContainer>
       <S.ProjectCardImageContainer isOdd={props.isOld}>
         <S.ProjectCardCover src={props.cover} alt={props.title} />
-        <span><ImageUpscale onClick={() => setIsOpen(!isOpen)} /></span>
+        <S.PreviewButton
+          type='button'
+          isOdd={props.isOld}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={`Ampliar imagem do projeto ${props.title}`}
+        >
+          <ImageUpscale aria-hidden='true' />
+        </S.PreviewButton>
       </S.ProjectCardImageContainer>
       {!!isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
         <S.ProjectCardCover src={props.cover} alt={props.title} />

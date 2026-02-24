@@ -34,38 +34,53 @@ export const Header = () => {
     return () => { document.body.style.overflow = 'auto' };
   }, [isOpen]);
 
+  useEffect(() => {
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsOpen(false);
+    };
+
+    window.addEventListener('keydown', onEscape);
+    return () => window.removeEventListener('keydown', onEscape);
+  }, []);
+
   return (
     <S.Header $isScrolled={isScrolled}>
       <S.Container>
         <S.Text><Balancer>Gabriel Santana</Balancer></S.Text>
-        <S.MobileMenuIcon onClick={() => setIsOpen(!isOpen)}>
+        <S.MobileMenuIcon
+          type='button'
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-controls='header-mobile-menu'
+          aria-label={isOpen ? 'Fechar menu de navegacao' : 'Abrir menu de navegacao'}
+        >
           <HeaderHamburguer isOpen={isOpen} />
         </S.MobileMenuIcon>
         <div className='desktoplist'>
-          {!isProjectPage && <S.NavLinks>
+          {!isProjectPage && <S.NavLinks aria-label='Navegacao principal'>
             {navItems.map((item, index: number) => (
-              <S.SideMenuItem key={index} $isActive={item.id === activeSection} onClick={() => onClick(item.id)}>{item.label}</S.SideMenuItem>
+              <S.SideMenuItem type='button' key={index} $isActive={item.id === activeSection} onClick={() => onClick(item.id)}>{item.label}</S.SideMenuItem>
             ))}
           </S.NavLinks>}
           <S.ActionGroup>
-            {isProjectPage && <Button $variant="primary" onClick={onBack}>Voltar para a página principal</Button>}
-            <S.WhatsAppButton onClick={() => redirectToLink('https://wa.me/11947063723?&text=Ola, tudo bem?')}>Enviar Whatsapp</S.WhatsAppButton>
+            {isProjectPage && <Button $variant="primary" onClick={onBack}>Voltar para a pagina principal</Button>}
+            <S.WhatsAppButton type='button' onClick={() => redirectToLink('https://wa.me/11947063723?&text=Ola, tudo bem?')} aria-label='Enviar mensagem no WhatsApp'>Enviar Whatsapp</S.WhatsAppButton>
           </S.ActionGroup>
         </div>
       </S.Container>
-      <S.SideMenu isOpen={isOpen}>
-        <S.SideMenuLinks>
+      <S.SideMenu id='header-mobile-menu' isOpen={isOpen}>
+        <S.SideMenuLinks aria-label='Navegacao mobile'>
           {!isProjectPage ? navItems.map((item, index: number) => (
-            <S.SideMenuItem key={index} $isActive={item.id === activeSection} onClick={() => onClick(item.id)}>{item.label}</S.SideMenuItem>
+            <S.SideMenuItem type='button' key={index} $isActive={item.id === activeSection} onClick={() => onClick(item.id)}>{item.label}</S.SideMenuItem>
           )) : <Button $variant="primary" onClick={onBack}>Voltar para home</Button>}
         </S.SideMenuLinks>
-        <S.WhatsAppCircle onClick={() => redirectToLink('https://wa.me/11947063723?&text=Ola, tudo bem?')}>
+        {/* <S.WhatsAppCircle type='button' onClick={() => redirectToLink('https://wa.me/11947063723?&text=Ola, tudo bem?')} aria-label='Enviar mensagem no WhatsApp'>
           <FaWhatsapp size={32} />
-        </S.WhatsAppCircle>
-        <S.Chatbot>
+        </S.WhatsAppCircle> */}
+        {/* <S.Chatbot aria-hidden='true'>
           <img src="/icon.svg" alt="Chatbot Avatar" />
           <span>Chatbot!</span>
-        </S.Chatbot>
+        </S.Chatbot> */}
       </S.SideMenu>
     </S.Header>
   )

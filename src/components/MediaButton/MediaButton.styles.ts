@@ -17,6 +17,11 @@ export const MediaButton = styled.button<{ $tooltip?: string }>`
     cursor: not-allowed;
   }
 
+  &:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
+
   &::after {
     content: '${({ $tooltip }) => $tooltip || ''}';
     position: absolute;

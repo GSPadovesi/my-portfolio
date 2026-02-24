@@ -33,7 +33,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, isSend = fal
   if (isSend) {
     return (
       <S.FormCard>
-        <S.SuccessState>
+        <S.SuccessState role='status' aria-live='polite'>
           <Title $variant='h3' $size='lg' $fontColor='#fff'>Mensagem enviada</Title>
           <Paragraph $size='md' $balance={false}>
             Obrigado pelo contato. Em breve, entrarei em contato para conversarmos sobre o seu projeto e como posso ajudar a torná-lo realidade.
@@ -50,7 +50,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, isSend = fal
         <Paragraph $size='md' $balance={false}>Preencha os campos abaixo para iniciar o contato.</Paragraph>
       </S.FormIntro>
 
-      <S.Form onSubmit={handleFormSubmit}>
+      <S.Form onSubmit={handleFormSubmit} noValidate>
         <Field
           type='input'
           id='contact-name'
@@ -58,6 +58,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, isSend = fal
           label='Nome'
           placeholder='Digite seu nome completo'
           value={name}
+          required
           onChange={(event) => setName(event.target.value)}
           onBlur={() => setTouched((current) => ({ ...current, name: true }))}
           error={touched.name ? errors.name : ''}
@@ -71,6 +72,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, isSend = fal
           label='E-mail'
           placeholder='Digite seu e-mail'
           value={email}
+          required
           onChange={(event) => setEmail(event.target.value)}
           onBlur={() => setTouched((current) => ({ ...current, email: true }))}
           error={touched.email ? errors.email : ''}
@@ -83,6 +85,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, isSend = fal
           label='Mensagem'
           placeholder='Descreva brevemente seu projeto'
           value={message}
+          required
           onChange={(event) => setMessage(event.target.value)}
           onBlur={() => setTouched((current) => ({ ...current, message: true }))}
           error={touched.message ? errors.message : ''}

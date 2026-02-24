@@ -23,4 +23,25 @@ export const ModalCard = styled.div`
   padding: 16px;
   display: flex;
   flex-direction: column;
+  position: relative;
 `
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  background: #a855f7;
+  color: #fff;
+  font-size: 20px;
+  z-index: 999;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
+`;

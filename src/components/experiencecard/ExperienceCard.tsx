@@ -6,7 +6,7 @@ export const ExperienceCard = ({ id, label, icon }: experienceinfoprops) => {
   return (
     <S.ExperienceCard id={`cardexperience-${id}`}>
       <div>
-        <S.ExperienceCardCover src={icon} alt="Icone" />
+        <S.ExperienceCardCover src={icon} alt={`Icone ${label}`} />
       </div>
       <div style={{ flex: '1' }}>
         <S.TrajectoryParagraph>{label}</S.TrajectoryParagraph>

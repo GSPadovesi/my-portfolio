@@ -60,23 +60,37 @@ export const ProjectCardImageContainer = styled.div<{ isOdd: boolean }>`
     max-height: 380px;
   }
 
-  >span{
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-    cursor: pointer;
-    z-index: 4;
-
-    &:hover{
-      transform: scale(1.1);
-    }
-
-    @media(min-width: 1024px){
-      right: ${({ isOdd }) => isOdd ? '16px' : 'auto'};
-      left: ${({ isOdd }) => isOdd ? 'auto' : '16px'};
-    }
-  }
 `
+
+export const PreviewButton = styled.button<{ isOdd: boolean }>`
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 4;
+  border: none;
+  border-radius: 999px;
+  width: 42px;
+  height: 42px;
+  background: rgba(16, 16, 16, 0.78);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
+
+  @media(min-width: 1024px){
+    right: ${({ isOdd }) => isOdd ? '16px' : 'auto'};
+    left: ${({ isOdd }) => isOdd ? 'auto' : '16px'};
+  }
+`;
 
 export const ProjectCardCover = styled.img`
   display: block;
@@ -94,8 +108,12 @@ export const ButtonsWrapper = styled.div<{ isOdd: boolean }>`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: ${props => props.isOdd ? 'flex-start' : 'flex-end'};
+  align-items: flex-start;
   gap: 16px;
   position: relative;
   z-index: 3;
+
+  @media(min-width: 1024px){
+    align-items: ${props => props.isOdd ? 'flex-start' : 'flex-end'};
+  }
 `

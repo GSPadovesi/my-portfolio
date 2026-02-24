@@ -1,4 +1,3 @@
-import React from 'react';
 import type { ContactEmailPayload } from './ContactEmail.types';
 import { escapeHtml, messageHtml } from './messageHtml';
 

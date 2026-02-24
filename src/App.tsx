@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='project/:projectName' element={<ProjectPage />} />
+        {/* <Route path='project/:projectName' element={<ProjectPage />} /> */}
       </Routes>
       <Footer />
       <AppToast />

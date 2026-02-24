@@ -82,6 +82,11 @@ export const WhatsAppButton = styled.button`
     background-color: #843dbe;
   }
 
+  &:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
+
   @media (max-width: 1023px) {
     display: none;
   }
@@ -93,6 +98,12 @@ export const MobileMenuIcon = styled.button`
   border: none;
   color: #fff;
   cursor: pointer;
+  border-radius: 8px;
+
+  &:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
 
   @media (max-width: 1023px) {
     display: block;
@@ -137,7 +148,9 @@ export const SideMenuLinks = styled.nav`
   list-style: none;
 `;
 
-export const SideMenuItem = styled.li<{ $isActive?: boolean }>`
+export const SideMenuItem = styled.button<{ $isActive?: boolean }>`
+  border: none;
+  background: transparent;
   font-size: 18px;
   font-weight: ${({ $isActive }) => ($isActive ? "700" : "400")};
   color: #FFFFFF;
@@ -147,9 +160,17 @@ export const SideMenuItem = styled.li<{ $isActive?: boolean }>`
   padding-bottom: 5px;
   text-decoration: none;
   cursor: pointer;
+  padding: 0;
+  text-align: left;
 
   &:hover {
     color: white;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #A254E9;
+    outline-offset: 4px;
+    border-radius: 4px;
   }
 
   &::after {
@@ -180,7 +201,8 @@ export const ActionGroup = styled.div`
   align-items: center;
 `
 
-export const WhatsAppCircle = styled.div`
+export const WhatsAppCircle = styled.button`
+  border: none;
   background-color: #25d366;
   color: #fff;
   padding: 20px;
@@ -189,6 +211,12 @@ export const WhatsAppCircle = styled.div`
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 40px 10px rgba(155, 77, 224, 0.5);
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
 `;
 
 export const Chatbot = styled.div`

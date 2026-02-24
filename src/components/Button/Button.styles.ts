@@ -48,6 +48,11 @@ export const StyledButton = styled.button<{
       filter: grayscale(0.2);
     }
 
+    &:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
+    }
+
     img{
       width: 18px;
       height: 18px;

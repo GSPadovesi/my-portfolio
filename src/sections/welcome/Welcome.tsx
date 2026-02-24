@@ -10,7 +10,7 @@ export const Welcome = ({ id }: WelcomeProps) => {
     <S.Welcome id={id}>
       <S.WelcomePresentation>
         <S.WelcomePresentationContainer>
-          <S.Cover src='/eu.png' />
+          <S.Cover src='/eu.png' alt='Foto de Gabriel Santana Padovesi' />
           <S.WelcomePresentationTextGroup>
             <S.WelcomePresentationSpan>Desenvolvedor <Rocket /></S.WelcomePresentationSpan>
             <S.WelcomePresentationTitle>full stack</S.WelcomePresentationTitle>
