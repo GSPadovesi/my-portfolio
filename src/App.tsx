@@ -1,8 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import { Header, Footer, AppToast } from './components';
 import { HomePage } from './pages';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
-import { AppToast } from './components/Toast';
 
 function App() {
   return (
