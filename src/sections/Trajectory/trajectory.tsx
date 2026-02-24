@@ -1,7 +1,7 @@
 import { experienceInfo, skillsInfo } from './Trajectory.constant'
 import { Title, Paragraph, Skills, ExperienceCard } from '../../components';
 import type { TrajectoryProps } from './Trajectory.types';
-import * as S from './trajectory.styles';
+import * as S from './Trajectory.styles';
 
 const bodyParagraphStyle = { hyphens: 'none', textTransform: 'none' } as const;
 
