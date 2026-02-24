@@ -1,4 +1,4 @@
-import { Project } from "../sections/project/Project"
+import { Project } from "../sections"
 
 
 export const ProjectPage = () => {
