@@ -1,5 +1,4 @@
 import { useEffect, useState, useCallback, useMemo } from "react";
-import { FaWhatsapp } from "react-icons/fa";
 import { navItems } from "./Header.constants";
 import { useScrollSpy } from "../../hooks";
 import { scrollToSection, redirectToLink } from "../../utils";
@@ -74,13 +73,6 @@ export const Header = () => {
             <S.SideMenuItem type='button' key={index} $isActive={item.id === activeSection} onClick={() => onClick(item.id)}>{item.label}</S.SideMenuItem>
           )) : <Button $variant="primary" onClick={onBack}>Voltar para home</Button>}
         </S.SideMenuLinks>
-        {/* <S.WhatsAppCircle type='button' onClick={() => redirectToLink('https://wa.me/11947063723?&text=Ola, tudo bem?')} aria-label='Enviar mensagem no WhatsApp'>
-          <FaWhatsapp size={32} />
-        </S.WhatsAppCircle> */}
-        {/* <S.Chatbot aria-hidden='true'>
-          <img src="/icon.svg" alt="Chatbot Avatar" />
-          <span>Chatbot!</span>
-        </S.Chatbot> */}
       </S.SideMenu>
     </S.Header>
   )
