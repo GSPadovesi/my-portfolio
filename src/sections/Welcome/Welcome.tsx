@@ -2,7 +2,7 @@ import { Rocket } from 'lucide-react'
 import { Button, Paragraph, Typewriter } from '../../components';
 import { redirectToLink } from '../../utils';
 import type { WelcomeProps } from './Welcome.types';
-import * as S from './Welcome.styles'
+import * as S from './Welcome.styles';
 
 export const Welcome = ({ id }: WelcomeProps) => {
 

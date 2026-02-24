@@ -1,7 +1,6 @@
 import { ProjectCard, Title } from '../../components';
 import { projectsData } from '../../utils';
-import * as S from './Projects.styles'
-
+import * as S from './Projects.styles';
 interface ProjectsSectionProps {
   id: string;
 }
