@@ -1,76 +1,110 @@
 # Portfolio - Gabriel Santana Padovesi
 
-Portfolio profissional desenvolvido para apresentar minha trajetoria, especialidades tecnicas, experiencia de mercado e projetos reais em tecnologia educacional.
+Portfolio profissional para apresentacao de trajetoria, stack tecnica, projetos reais e canais de contato.
 
-## Analise Geral do Projeto
+## Visao Geral
 
-### O que este projeto e
-
-Este repositorio contem uma aplicacao web de portfolio pessoal, com foco em:
+Este repositorio contem uma aplicacao React + TypeScript com foco em:
 
 - posicionamento profissional como Desenvolvedor Full Stack;
-- apresentacao de experiencia e stack tecnica;
-- exibicao de projetos com contexto de negocio;
-- conversao de visitantes para contato (LinkedIn, WhatsApp e email).
+- apresentacao de experiencia e tecnologias;
+- listagem de projetos com pagina de detalhe;
+- conversao de visitante via LinkedIn, WhatsApp e formulario com envio de e-mail.
 
-### Stack e arquitetura
+## Stack
 
-- React 19 + TypeScript
-- Vite 7 (build e desenvolvimento)
-- Styled Components 6 (estilizacao)
-- React Router DOM 7 (roteamento)
-- react-wrap-balancer (melhor distribuicao de texto)
+- React 19
+- TypeScript 5
+- Vite 7
+- Styled Components 6
+- React Router DOM 7
+- Nodemailer
+- React Toastify
+- react-wrap-balancer
+- API serverless com `@vercel/node`
 
-A arquitetura esta organizada por responsabilidade:
+## Arquitetura
 
-- `src/pages`: composicao das telas (`HomePage` e `ProjectPage`);
-- `src/sections`: blocos principais da landing page (`Welcome`, `Trajectory`, `Projects`, `Contact`);
-- `src/components`: componentes reutilizaveis (Title, Paragraph, Button, Card, Header, Footer etc.);
-- `src/utils`: dados e funcoes auxiliares (projetos, slug, redirecionamento, scroll).
+- `src/pages`: composicao das paginas (`HomePage`, `ProjectPage`);
+- `src/sections`: blocos de tela (`Welcome`, `Trajectory`, `Projects`, `Project`, `Contact`);
+- `src/components`: componentes reutilizaveis (`Header`, `Footer`, `Button`, `Field`, `ProjectCard`, `Modal`, `Toast` etc.);
+- `src/utils`: dados e funcoes auxiliares (slug, scroll, redirecionamento, projetos, transporte SMTP);
+- `src/emails/contact`: templates e builder dos e-mails de contato;
+- `api/contact/index.ts`: endpoint serverless para processar envio de e-mail.
 
-### Fluxo da aplicacao
+## Rotas
 
-1. A rota `/` renderiza a landing principal com as secoes:
-- Welcome (apresentacao e CTA);
-- Trajectory (perfil, experiencia e skills);
-- Projects (cards de projetos);
-- Contact (redes sociais e contato direto).
+- `/`: landing principal (welcome, trajetoria, projetos e contato);
+- `/project/:projectName`: detalhe de projeto por slug;
+- `POST /api/contact`: endpoint de envio de contato.
 
-2. A rota `/project/:projectName` abre o detalhe de um projeto com base no slug.
+Payload esperado em `/api/contact`:
 
-### Qualidade tecnica observada
-
-- Estrutura modular e facil de manter.
-- Componentes base de tipografia (`Title` e `Paragraph`) com escalas responsivas.
-- Reuso consistente de componentes visuais.
-- Dados de projetos centralizados em `projectsData.ts`.
-- Build, lint e tipagem integrados via scripts do projeto.
-
-### Pontos de evolucao recomendados
-
-- revisar textos com problema de codificacao em alguns arquivos;
-- padronizar ainda mais semantica de espacamento entre secoes;
-- fortalecer camada de acessibilidade (aria-labels e contraste em alguns pontos);
-- incluir testes de componentes/fluxos criticos (ex.: roteamento e cards de projetos).
-
-## Descricao Profissional (PT-BR)
-
-Sou Gabriel Santana Padovesi, Desenvolvedor Full Stack com foco em criacao de plataformas web, sistemas digitais e experiencias orientadas a resultado. Tenho atuacao pratica em projetos educacionais de media e alta complexidade, participando de ponta a ponta do desenvolvimento: interface, regras de negocio, backend, autenticacao, areas administrativas e integracoes.
-
-No portfolio, apresento trabalhos realizados em ambientes reais, com foco em performance, usabilidade e valor para o usuario final. Minha base tecnica inclui React, Next.js, TypeScript, Node.js e MongoDB, com perfil colaborativo, visao de produto e compromisso com qualidade de entrega.
-
-Meu objetivo e transformar necessidades de negocio em solucoes digitais robustas, escalaveis e bem estruturadas.
-
-## Como executar localmente
-
-```bash
-yarn
-yarn dev
+```json
+{
+  "name": "Nome",
+  "email": "email@dominio.com",
+  "message": "Mensagem do visitante"
+}
 ```
 
-## Scripts disponiveis
+## Formulario e E-mail
 
-- `yarn dev`: inicia ambiente de desenvolvimento;
-- `yarn build`: executa TypeScript build e gera bundle de producao;
-- `yarn lint`: executa analise estatica com ESLint;
-- `yarn preview`: sobe preview do build local.
+Fluxo atual de contato:
+
+1. usuario preenche formulario na secao de contato;
+2. frontend valida campos e chama `POST /api/contact`;
+3. API valida dados e envia e-mail para o dono do portfolio;
+4. API envia e-mail de confirmacao para o usuario;
+5. frontend mostra toast de sucesso/erro e estado de mensagem enviada.
+
+## Variaveis de Ambiente
+
+Crie um arquivo `.env` com:
+
+```env
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=465
+EMAIL_USER=seu-email@dominio.com
+EMAIL_PASS=sua-senha-de-app
+```
+
+Observacoes:
+
+- o projeto atualmente usa conexao SMTP segura (`secure: true`);
+- para Gmail, utilize senha de app (nao senha normal da conta);
+- para testar a API localmente, prefira `vercel dev`.
+
+## Como Executar Localmente
+
+Instalacao:
+
+```bash
+npm install
+```
+
+Desenvolvimento (frontend):
+
+```bash
+npm run dev
+```
+
+Desenvolvimento com API serverless:
+
+```bash
+npm run vercel
+```
+
+## Scripts
+
+- `npm run dev`: inicia Vite em modo desenvolvimento;
+- `npm run vercel`: sobe ambiente Vercel local (incluindo `/api/contact`);
+- `npm run build`: executa `tsc -b` e build de producao com Vite;
+- `npm run lint`: executa ESLint;
+- `npm run preview`: preview do build local.
+
+## Melhorias Futuras Recomendadas
+
+- ampliar acessibilidade (aria labels, foco visivel e contraste);
+- incluir testes automatizados para fluxos criticos;
+- adicionar `.env.example` para facilitar setup inicial.

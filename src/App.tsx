@@ -18,17 +18,4 @@ function App() {
   )
 }
 
-export default App
-
-
-{/* 
-        
-        
-        <div style={{ minHeight: '100dvh' }}>
-        </div> */}
-{/* <div style={{ position: 'fixed', right: '60px', bottom: '120px' }}>
-        <S.ButtonModeTemporary onClick={() => setThemeName(themeName === "theme" ? "darkTheme" : "theme")}>Theme</S.ButtonModeTemporary>
-        <S.WhatsAppCircle>
-          <FaWhatsapp size={32} />
-        </S.WhatsAppCircle>
-      </div> */}
+export default App;

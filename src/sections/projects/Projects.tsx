@@ -11,7 +11,7 @@ export const Projects = ({ id }: ProjectsSectionProps) => {
   return (
     <S.Projects id={id}>
       <S.ProjectsContainer>
-        <Title $variant='h2' $fontColor='#A254E9' >Trajetória e Perfil Profissional</Title>
+        <Title $variant='h2' $fontColor='#A254E9' >Projetos que participei</Title>
         {projects.map((project) => (
           <ProjectCard key={project.id} isOld={project.id % 2 !== 0} {...project} />
         ))}
