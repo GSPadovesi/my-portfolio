@@ -58,6 +58,14 @@ Fluxo atual de contato:
 4. API envia e-mail de confirmacao para o usuario;
 5. frontend mostra toast de sucesso/erro e estado de mensagem enviada.
 
+## Testes Automatizados
+
+Fluxos criticos cobertos atualmente:
+
+- validacao e submissao do formulario de contato (`ContactForm`);
+- handler da API `/api/contact` (metodo invalido, payload invalido e envio de e-mails);
+- normalizacao de slug de projeto (`toProjectSlug`).
+
 ## Variaveis de Ambiente
 
 Crie um arquivo `.env` com:
@@ -101,10 +109,10 @@ npm run vercel
 - `npm run vercel`: sobe ambiente Vercel local (incluindo `/api/contact`);
 - `npm run build`: executa `tsc -b` e build de producao com Vite;
 - `npm run lint`: executa ESLint;
+- `npm run test`: executa os testes automatizados (Vitest);
+- `npm run test:watch`: executa testes em modo watch;
 - `npm run preview`: preview do build local.
 
 ## Melhorias Futuras Recomendadas
 
-- ampliar acessibilidade (aria labels, foco visivel e contraste);
 - incluir testes automatizados para fluxos criticos;
-- adicionar `.env.example` para facilitar setup inicial.
