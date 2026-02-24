@@ -9,3 +9,8 @@ export interface ContactEmailTemplate {
   text: string;
   html: string;
 }
+
+export interface ContactEmailsResult {
+  owner: ContactEmailTemplate;
+  user: ContactEmailTemplate;
+}

@@ -1,41 +1,31 @@
+import React from 'react';
 import type { ContactEmailPayload } from './ContactEmail.types';
+import { escapeHtml, messageHtml } from './messageHtml';
 
-interface ContactUserEmailProps {
-  payload: ContactEmailPayload;
-}
-
-export const ContactUserEmail: React.FC<ContactUserEmailProps> = ({ payload }) => {
-  const { name, message } = payload;
-
-  return (
-    <table width='100%' cellPadding={0} cellSpacing={0} border={0} style={{ backgroundColor: '#f3f4f6', padding: '24px 12px' }}>
-      <tbody>
-        <tr>
-          <td align='center'>
-            <table width='640' cellPadding={0} cellSpacing={0} border={0} style={{ width: '100%', maxWidth: 640, backgroundColor: '#ffffff', borderRadius: 12 }}>
-              <tbody>
-                <tr>
-                  <td style={{ padding: '24px', backgroundColor: '#a254e9', borderTopLeftRadius: 12, borderTopRightRadius: 12 }}>
-                    <p style={{ margin: 0, fontFamily: 'Arial, sans-serif', fontSize: 20, fontWeight: 700, color: '#ffffff' }}>
-                      Mensagem recebida
-                    </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td style={{ padding: '24px', fontFamily: 'Arial, sans-serif', color: '#111827', fontSize: 14, lineHeight: '22px' }}>
-                    <p style={{ margin: '0 0 10px 0' }}>Oi {name}, obrigado pelo contato.</p>
-                    <p style={{ margin: '0 0 10px 0' }}>
-                      Sua mensagem foi recebida com sucesso. Em breve retorno com os proximos passos.
-                    </p>
-                    <p style={{ margin: '18px 0 6px 0' }}><strong>Resumo enviado:</strong></p>
-                    <p style={{ margin: 0, whiteSpace: 'pre-line' }}>{message}</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  );
-};
+export const ContactUserEmail = (payload: ContactEmailPayload): string => `
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f3f4f6;padding:24px 12px;">
+  <tbody>
+    <tr>
+      <td align="center">
+        <table width="640" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:640px;background-color:#ffffff;border-radius:12px;">
+          <tbody>
+            <tr>
+              <td style="padding:24px;background-color:#a254e9;border-top-left-radius:12px;border-top-right-radius:12px;">
+                <p style="margin:0;font-family:Arial,sans-serif;font-size:20px;font-weight:700;color:#ffffff;">Mensagem recebida</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:24px;font-family:Arial,sans-serif;color:#111827;font-size:14px;line-height:22px;">
+                <p style="margin:0 0 10px 0;">Oi ${escapeHtml(payload.name)}, obrigado pelo contato.</p>
+                <p style="margin:0 0 10px 0;">Sua mensagem foi recebida com sucesso. Em breve retorno com os proximos passos.</p>
+                <p style="margin:18px 0 6px 0;"><strong>Resumo enviado:</strong></p>
+                <p style="margin:0;white-space:pre-line;">${messageHtml(payload.message)}</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

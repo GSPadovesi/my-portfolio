@@ -51,6 +51,8 @@ export const Contact = ({ id }: ContactProps) => {
   }, [isLoading]);
 
   useEffect(() => {
+    isMountedRef.current = true;
+
     return () => {
       isMountedRef.current = false;
       requestControllerRef.current?.abort();
