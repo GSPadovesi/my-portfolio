@@ -18,13 +18,14 @@ export const ProjectCardInformationContainer = styled.div<{ isOdd: boolean }>`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: ${props => props.isOdd ? 'flex-start' : 'flex-end'};
+  align-items: flex-start;
   gap: 16px;
   position: relative;
   z-index: 2;
-
+  
   @media(min-width: 1024px){
     height: 100%;
+    align-items: ${props => props.isOdd ? 'flex-start' : 'flex-end'};
     justify-content: space-between;
   }
 `

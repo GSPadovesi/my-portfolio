@@ -36,3 +36,8 @@ export const ContactDescription = styled(Paragraph)`
   max-width: 600px;
   align-self: flex-start;
 `
+
+export const ContactFormWrapper = styled.div`
+  width: 100%;
+  align-self: flex-start;
+`

@@ -1,4 +1,4 @@
-import { Header, Footer } from './components'
+import { Header, Footer, AppToast } from './components'
 import { Route, Routes } from 'react-router-dom';
 import { HomePage, ProjectPage } from './pages';
 
@@ -13,6 +13,7 @@ function App() {
         <Route path='project/:projectName' element={<ProjectPage />} />
       </Routes>
       <Footer />
+      <AppToast />
     </>
   )
 }

@@ -42,6 +42,12 @@ export const StyledButton = styled.button<{
     font-family: 'Roboto', sans-serif;
     cursor: pointer;
 
+    &:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      filter: grayscale(0.2);
+    }
+
     img{
       width: 18px;
       height: 18px;

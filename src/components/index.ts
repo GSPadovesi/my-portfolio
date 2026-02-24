@@ -10,3 +10,6 @@ export * from './Skills';
 export * from './Typewriter';
 export * from './DataContent';
 export * from './Footer';
+export * from './contactForm';
+export * from './Field';
+export * from './Toast';

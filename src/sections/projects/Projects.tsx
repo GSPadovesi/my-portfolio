@@ -1,4 +1,4 @@
-import { ProjectCard } from '../../components';
+import { ProjectCard, Title } from '../../components';
 import { projectsData } from '../../utils';
 import * as S from './Projects.styles'
 
@@ -11,7 +11,7 @@ export const Projects = ({ id }: ProjectsSectionProps) => {
   return (
     <S.Projects id={id}>
       <S.ProjectsContainer>
-        <S.ProjectTitle>Projetos que participei</S.ProjectTitle>
+        <Title $variant='h2' $fontColor='#A254E9' >Trajetória e Perfil Profissional</Title>
         {projects.map((project) => (
           <ProjectCard key={project.id} isOld={project.id % 2 !== 0} {...project} />
         ))}
