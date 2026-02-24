@@ -1,8 +1,7 @@
 import { ImageUpscale } from 'lucide-react';
-import { redirectToLink, toProjectSlug } from '../../utils';
-import { useCallback, useState } from 'react';
+import { redirectToLink } from '../../utils';
+import { useState } from 'react';
 import { Modal, Title, Paragraph, Button } from '../index';
-import { useNavigate } from 'react-router-dom';
 import type { ProjectCardProps } from './ProjectCard.types';
 import * as S from './ProjectCard.styles'
 
