@@ -1,6 +1,6 @@
-import type { ContactEmailPayload, ContactEmailTemplate, ContactEmailsResult } from './ContactEmail.types';
-import { ContactOwnerEmail } from './ContactOwnerEmail';
-import { ContactUserEmail } from './ContactUserEmail';
+import type { ContactEmailPayload, ContactEmailTemplate, ContactEmailsResult } from './ContactEmail.types.js';
+import { ContactOwnerEmail } from './ContactOwnerEmail.js';
+import { ContactUserEmail } from './ContactUserEmail.js';
 
 export const buildContactEmails = (payload: ContactEmailPayload): ContactEmailsResult => {
   const owner: ContactEmailTemplate = {

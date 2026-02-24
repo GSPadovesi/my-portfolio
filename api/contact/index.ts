@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { buildContactEmails } from '../../src/emails/contact';
-import { transporter } from '../../src/utils/transporter';
+import { buildContactEmails } from '../../src/emails/contact/index.js';
+import { transporter } from '../../src/utils/transporter.js';
 
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
  const EMAIL_USER = process.env.EMAIL_USER;

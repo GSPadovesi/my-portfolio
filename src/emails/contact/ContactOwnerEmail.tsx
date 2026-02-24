@@ -1,5 +1,5 @@
-import type { ContactEmailPayload } from './ContactEmail.types';
-import { escapeHtml, messageHtml } from './messageHtml';
+import type { ContactEmailPayload } from './ContactEmail.types.js';
+import { escapeHtml, messageHtml } from './messageHtml.js';
 
 export const ContactOwnerEmail = (payload: ContactEmailPayload): string => `
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f3f4f6;padding:24px 12px;">
