@@ -8,11 +8,6 @@ import * as S from './ProjectCard.styles'
 
 export const ProjectCard = (props: ProjectCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
-
-  const onNavigate = useCallback((projectName: string) => {
-    navigate(`/project/${toProjectSlug(projectName)}`);
-  }, [navigate]);
 
   return (
     <S.ProjectCard isOdd={props.isOld}>
@@ -26,7 +21,6 @@ export const ProjectCard = (props: ProjectCardProps) => {
         </S.InformationDescriptionContainer>
         <S.ButtonsWrapper isOdd={props.isOld}>
           <Button $variant="primary" $size="large" disabled={!props.link.trim()} onClick={() => redirectToLink(props.link)}>Ir ao site oficial</Button>
-          {/* <Button $variant="secondary" $size="large" onClick={() => onNavigate(props.title)}>Ver mais sobre</Button> */}
         </S.ButtonsWrapper>
       </S.ProjectCardInformationContainer>
       <S.ProjectCardImageContainer isOdd={props.isOld}>

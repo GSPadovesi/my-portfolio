@@ -1,6 +1,8 @@
-import { Header, Footer, AppToast } from './components'
 import { Route, Routes } from 'react-router-dom';
 import { HomePage } from './pages';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { AppToast } from './components/Toast';
 
 function App() {
   return (
@@ -8,7 +10,6 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />
-        {/* <Route path='project/:projectName' element={<ProjectPage />} /> */}
       </Routes>
       <Footer />
       <AppToast />
