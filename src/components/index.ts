@@ -1,6 +1,6 @@
 export * from './Button';
 export * from './MediaButton';
-export * from './Experiencecard';
+export * from './ExperienceCard';
 export * from './ProjectCard';
 export * from './Paragraph';
 export * from './Title';
