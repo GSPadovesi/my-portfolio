@@ -35,7 +35,7 @@ Este repositorio contem uma aplicacao React + TypeScript com foco em:
 ## Rotas
 
 - `/`: landing principal (welcome, trajetoria, projetos e contato);
-- `/project/:projectName`: detalhe de projeto por slug;
+- `/project/:projectName`: detalhe de projeto por slug; (ainda em desenvolvimento)
 - `POST /api/contact`: endpoint de envio de contato.
 
 Payload esperado em `/api/contact`:
